@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC Measurement Research Brief — June 02, 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #1b1b1b;
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ─────────────────────────────────── */
+    header {
+      border-bottom: 3px solid #2d6a4f;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #52b788;
+      margin-bottom: 0.35rem;
+    }
+    header h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #2d6a4f;
+      line-height: 1.2;
+    }
+    header .date {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: #555;
+    }
+
+    /* ── Section titles ─────────────────────────── */
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2d6a4f;
+      border-left: 4px solid #52b788;
+      padding-left: 0.75rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1b1b1b;
+      margin: 1.75rem 0 0.75rem;
+      padding-top: 0.25rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ── Editor's note ──────────────────────────── */
+    .editors-note {
+      background: #fff;
+      border: 1px solid #d1fae5;
+      border-left: 5px solid #2d6a4f;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .editors-note .note-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #52b788;
+      margin-bottom: 0.5rem;
+    }
+    .editors-note p { font-size: 0.95rem; }
+
+    /* ── Paper card ─────────────────────────────── */
+    .paper-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.25rem;
+      border-top: 3px solid #52b788;
+      transition: box-shadow 0.15s;
+    }
+    .paper-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .paper-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .paper-card h4 a {
+      color: #2d6a4f;
+      text-decoration: none;
+    }
+    .paper-card h4 a:hover { text-decoration: underline; }
+    .paper-meta {
+      font-size: 0.82rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+    .paper-synthesis { font-size: 0.93rem; }
+    .method-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      background: #d1fae5;
+      color: #2d6a4f;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+    }
+
+    /* ── Debate section ─────────────────────────── */
+    .debate-block {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .debate-block p { margin-bottom: 1rem; font-size: 0.95rem; }
+    .debate-block p:last-child { margin-bottom: 0; }
+
+    /* ── Field Outlook ──────────────────────────── */
+    .outlook-list {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .outlook-list ul { padding-left: 1.2rem; }
+    .outlook-list ul li {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .outlook-list ul li strong { color: #2d6a4f; }
+
+    /* ── Reference table ────────────────────────── */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      font-size: 0.85rem;
+    }
+    thead tr { background: #2d6a4f; color: #fff; }
+    thead th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    tbody tr:nth-child(even) { background: #f0fdf4; }
+    tbody td { padding: 0.65rem 1rem; vertical-align: top; }
+    tbody td:first-child { font-weight: 600; }
+
+    /* ── PDF button ─────────────────────────────── */
+    .pdf-bar {
+      text-align: center;
+      margin: 2.5rem 0 1rem;
+    }
+    .pdf-btn {
+      background: #2d6a4f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 2rem;
+      font-size: 0.97rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+    }
+    .pdf-btn:hover { background: #1e4d38; }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      border-top: 1px solid #d1e8da;
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .pdf-bar { display: none; }
+      .paper-card, .debate-block, .outlook-list, table { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header>
+    <div class="label">SOC Daily Research Brief</div>
+    <h1>Soil Organic Carbon Measurement:<br>Electrochemical, Spectroscopic &amp; Classical Methods</h1>
+    <div class="date">June 02, 2026 &nbsp;·&nbsp; 9 papers across 3 method buckets</div>
+  </header>
+
+  <!-- ── EDITOR'S NOTE ───────────────────────────────────── -->
+  <div class="editors-note">
+    <div class="note-label">Editor's Note</div>
+    <p>
+      For a founder building electrochemical SOC sensors for Indian smallholder farms, this week's literature underscores a pivotal moment: low-cost in-situ electrochemistry is no longer a fringe concept — two independent research groups have demonstrated field-stable PCB-based sensors that require zero soil pre-treatment and report SOC or pH within minutes. The key competitive gap to close is soil matrix variability across India's heterogeneous agro-climatic zones, where ionic strength, clay mineralogy, and carbonate content can shift electrode response dramatically — the same challenge that plagues both NIR and loss-on-ignition benchmarks. Targeting regulatory credibility alongside field practicality, your sensor architecture should be designed to cross-validate against one classical reference method (dry combustion or Walkley-Black) and one spectral proxy, positioning the device as a triangulating instrument rather than a standalone black box.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BUCKET 1: ELECTROCHEMICAL                             -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>Papers by Method</h2>
+  <h3>Bucket 1 — Electrochemical Sensing</h3>
+
+  <!-- Paper E1 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.3390/s24041153" target="_blank" rel="noopener">
+        Characterization of an In-Situ Soil Organic Carbon (SOC) via a Smart-Electrochemical Sensing Approach
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Vikram Narayanan Dhamu, Anil C. Somenahally, Anirban Paul, Sriram Muthukumar, Shalini Prasad &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; <em>Sensors</em> (MDPI), 24(4), 1153 &nbsp;·&nbsp; DOI: 10.3390/s24041153
+    </div>
+    <p class="paper-synthesis">
+      This study demonstrates the first three-electrode FR-4 PCB sensor for direct in-situ SOC quantification, using a gold working electrode functionalized with a BMIM-BF4 ionic liquid / activated-biochar composite that acts as a selective sorbent for dissolved organic carbon species. The soil itself serves as the solid-phase electrolyte, and a square-pulsed charge excitation maps the electrochemical response to the SOC profile without any sample extraction or laboratory processing. The result is a genuinely field-deployable architecture that preserves spatial granularity — a critical advantage over grab-sample laboratory methods used across Indian agricultural surveys.
+    </p>
+    <span class="method-tag">Electrochemical · In-Situ PCB Sensor</span>
+  </div>
+
+  <!-- Paper E2 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.3390/mi14122188" target="_blank" rel="noopener">
+        Espial: Electrochemical Soil pH Sensor for In Situ Real-Time Monitoring
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Mohammed A. Eldeeb, Vikram Narayanan Dhamu, Anirban Paul, Sriram Muthukumar, Shalini Prasad &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; <em>Micromachines</em> (MDPI), 14(12), 2188 &nbsp;·&nbsp; DOI: 10.3390/mi14122188
+    </div>
+    <p class="paper-synthesis">
+      Espial extends the same Prasad-lab PCB platform to soil pH, using an alizarin/Nafion composite drop-cast onto the working electrode to achieve a Nernstian sensitivity range of −50 to −66 mV/pH with R² &gt; 0.97 and a validated error below 10%. A 7-day continuous in-situ deployment confirmed temporal stability in a real soil column, making it the first reported long-duration electrochemical soil-pH monitor without manual recalibration. For an SOC sensor developer, this paper is directly instructive: the same alizarin-Nafion chemistry can be adapted as a pH compensation layer for SOC electrodes, neutralising the pH-dependent oxidation artifacts that confound organic carbon signal in acidic Indian red soils.
+    </p>
+    <span class="method-tag">Electrochemical · pH / In-Situ</span>
+  </div>
+
+  <!-- Paper E3 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1039/D4RA00034J" target="_blank" rel="noopener">
+        Development of Electrochemical Sensors for Quick Detection of Environmental (Soil and Water) NPK Ions
+      </a>
+    </h4>
+    <div class="paper-meta">
+      M. I. Hossain, M. A. Khaleque, M. R. Ali, M. S. Bacchu, M. S. Hossain, S. M. F. Shahed, Mohamed Aly Saad Aly, Md. Z. H. Khan &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; <em>RSC Advances</em>, 14, 9137–9158 &nbsp;·&nbsp; DOI: 10.1039/D4RA00034J
+    </div>
+    <p class="paper-synthesis">
+      This comprehensive review synthesises recent electrochemical approaches for detecting nitrogen, phosphorus, and potassium ions in soil and irrigation water, cataloguing modified electrode materials — carbon nanotubes, metal-organic frameworks, molecularly imprinted polymers — alongside their detection limits and selectivity coefficients. The authors argue that existing single-nutrient sensors are ready for commercial deployment but that multi-analyte co-detection (N+P+K on one platform) remains the open engineering challenge. For an Indian precision-agriculture device, the review provides a ready bill-of-materials shortlist: combining NPK detection with SOC sensing on one multi-electrode PCB would dramatically increase per-device value for smallholders who currently send soil samples to state labs weeks before planting.
+    </p>
+    <span class="method-tag">Electrochemical · NPK Review</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BUCKET 2: SPECTROSCOPIC                               -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h3>Bucket 2 — Spectroscopic Methods</h3>
+
+  <!-- Paper S1 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1111/sum.70186" target="_blank" rel="noopener">
+        Real-Time Measurement of Soil Organic Carbon and Related Properties Across Agricultural Land Types Using Mobile Near-Infrared Spectroscopy
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Ng et al. &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; <em>Soil Use and Management</em> (Wiley), e70186 &nbsp;·&nbsp; DOI: 10.1111/sum.70186
+    </div>
+    <p class="paper-synthesis">
+      Spanning 101 fields across five UK farms sampled in spring 2023 and 2024, this study validated mobile handheld NIRS for simultaneous real-time retrieval of SOC and above-ground plant nutrient properties from 505 matched soil-plant sample pairs. Results showed robust SOC predictions across arable, temporary ley, and permanent grassland land-use types without laboratory recalibration between seasons — a significant operational simplification over earlier proximal sensing protocols. The study's implication for Indian deployment is cautionary: UK soils are relatively homogeneous in mineral composition, and the "no recalibration" claim should be retested against India's highly variable Vertisols and Alfisols before mobile NIRS is adopted as a reference benchmark for SOC crediting schemes.
+    </p>
+    <span class="method-tag">Spectroscopic · Mobile NIR</span>
+  </div>
+
+  <!-- Paper S2 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1021/acs.analchem.5c04616" target="_blank" rel="noopener">
+        Calibrated Uncertainty Estimation for Soil Organic Carbon from Raman Spectra
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Jeffrey K. Wiens, Natalia Solomatova, Sadegh Shokatian (Miraterra Technologies Corporation) &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <em>Analytical Chemistry</em> (ACS), published December 11, 2025 &nbsp;·&nbsp; DOI: 10.1021/acs.analchem.5c04616
+    </div>
+    <p class="paper-synthesis">
+      Wiens et al. introduce a conformal prediction (CP) framework that generates statistically valid, user-specified coverage prediction intervals for SOC estimates derived from Shifted Excitation Raman Difference Spectroscopy (SERDS), a technique that suppresses the dominant soil fluorescence background that historically made Raman unusable in field conditions. Critically, CP is model-agnostic — any ML regressor trained on SERDS spectra can be wrapped in this uncertainty layer without retraining, allowing operators to flag low-confidence predictions in real time. This uncertainty quantification approach is highly transferable: an electrochemical SOC sensor facing variable soil matrices could adopt analogous conformal bounds to communicate measurement confidence to farmers and carbon-market verifiers rather than producing a single opaque number.
+    </p>
+    <span class="method-tag">Spectroscopic · Raman / SERDS</span>
+  </div>
+
+  <!-- Paper S3 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1080/17583004.2025.2511337" target="_blank" rel="noopener">
+        Assessing the Robustness of VIS-NIR Spectroscopy-Based Soil Organic Carbon Prediction Against Four Wet Chemistry Methods
+      </a>
+    </h4>
+    <div class="paper-meta">
+      C.-Y. Wu et al. &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; <em>Carbon Management</em> (Taylor &amp; Francis), published online May 29, 2025 &nbsp;·&nbsp; DOI: 10.1080/17583004.2025.2511337
+    </div>
+    <p class="paper-synthesis">
+      Using a Cubist machine-learning model trained on 400 diverse soil samples with Walkley-Black (WB) SOC labels, Wu et al. tested whether VIS-NIR predictions hold up when the "true" SOC is defined by four alternative wet-chemistry gold standards — and found substantial cross-method divergence, with model accuracy degrading significantly when evaluated against methods other than the one used for training. The study exposes a foundational problem for sensor calibration: SOC is not a single observable quantity but a method-dependent construct, meaning any novel sensor's "accuracy" is only as meaningful as the reference method it was calibrated against. For an Indian electrochemical SOC device destined for carbon markets, this paper argues strongly for standardising on one internationally recognised reference method (ISO 10694 dry combustion) from day one, rather than WB, which under-recovers recalcitrant carbon common in Indian black cotton soils.
+    </p>
+    <span class="method-tag">Spectroscopic · VIS-NIR / ML</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BUCKET 3: CLASSICAL METHODS                           -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h3>Bucket 3 — Classical Measurement Methods</h3>
+
+  <!-- Paper C1 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://www.hortijournal.com/archives/2022.v4.i1.A.85" target="_blank" rel="noopener">
+        Comparison of Organic Matter Determination Methods in Soil by Loss on Ignition and Potassium Dichromate Method
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Dugasa Gerenfes, Abraha G. Giorgis, Gobena Negasa &nbsp;·&nbsp; 2022 &nbsp;·&nbsp; <em>International Journal of Horticultural and Food Science</em>, 4(1) &nbsp;·&nbsp; DOI: 10.31248/IJHFS2022.085
+    </div>
+    <p class="paper-synthesis">
+      Drawing on 60 sub-surface composite samples from Arsi zone, Ethiopia — a high-clay environment broadly comparable to India's Vertisol belt — Gerenfes et al. found a statistically significant divergence (p &lt; 0.05) between Walkley-Black (WB) dichromate oxidation and loss-on-ignition (LOI) SOC estimates, with LOI systematically over-reporting SOC relative to WB because structural water loss from clay minerals contributes spurious mass loss. The study reinforces that no single classical method is universally transferable across tropical high-clay soils without site-specific correction factors. For a sensor developer, this matters because it means the "ground truth" label used to train any SOC model carries an inherent bias whose direction depends on the local soil type — a non-trivial problem when building a pan-India calibration dataset.
+    </p>
+    <span class="method-tag">Classical · LOI vs. Wet Oxidation</span>
+  </div>
+
+  <!-- Paper C2 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1139/cjss-2023-0089" target="_blank" rel="noopener">
+        Refinement of the Carbon to Loss on Ignition Relationship in Forest Soils
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Grady J. Boyle, Evan S. Kane, Lucas E. Nave, Katherine A. Heckman, Martin F. Jurgensen &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; <em>Canadian Journal of Soil Science</em>, 104(2), 237–240 &nbsp;·&nbsp; DOI: 10.1139/cjss-2023-0089
+    </div>
+    <p class="paper-synthesis">
+      Leveraging the International Soil Carbon Network and NEON databases, Boyle et al. demonstrate that the widely used 50% C:LOI conversion rule fails dramatically in Spodosol horizons, where measured C fractions can be as low as 20–30% of LOI — a systematic error large enough to cause two-fold overestimations of soil carbon stocks if uncorrected. They provide empirical, depth- and horizon-stratified equations that reduce this error, validated across thousands of samples. While focused on temperate forest soils, the methodological lesson is directly applicable to India: any large-scale SOC crediting programme that uses LOI for convenience must build in horizon-specific correction models, and a sensor that bypasses LOI entirely — measuring electrochemically or spectrally — automatically sidesteps this structural error source.
+    </p>
+    <span class="method-tag">Classical · LOI / Dry Combustion</span>
+  </div>
+
+  <!-- Paper C3 -->
+  <div class="paper-card">
+    <h4>
+      <a href="https://doi.org/10.1007/s13157-023-01698-z" target="_blank" rel="noopener">
+        An Improved Framework for Estimating Organic Carbon Content of Mangrove Soils Using Loss-on-Ignition and Coastal Environmental Setting
+      </a>
+    </h4>
+    <div class="paper-meta">
+      Joshua L. Breithaupt, Havalend E. Steinmuller, Andre S. Rovai, Kevin M. Engelbert, Joseph M. Smoak, Lisa G. Chambers, et al. &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; <em>Wetlands</em> (Springer), 43, 57 &nbsp;·&nbsp; DOI: 10.1007/s13157-023-01698-z
+    </div>
+    <p class="paper-synthesis">
+      Analysing 1,246 soil samples from 17 mangrove regions across the Americas, Breithaupt et al. demonstrate that a single SOM-to-OC conversion equation cannot span coastal environmental settings — terrigenous sediment zones and carbonate-dominated systems require fundamentally different regression slopes, with errors exceeding 40% when the wrong equation is applied. Their six-equation framework, stratified by SOM content and sediment mineralogy, is the most comprehensive field-tested LOI correction protocol published to date. The broader message for Indian coastal SOC mapping — particularly in the Sundarbans and Odisha mangrove systems — is that the reference-method problem is not merely a precision issue but a systematic accuracy problem that current carbon registries have not yet formally resolved.
+    </p>
+    <span class="method-tag">Classical · LOI / Coastal C Stocks</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- SCIENTISTS' DEBATE                                    -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>Scientists' Debate</h2>
+  <div class="debate-block">
+    <p>
+      <strong>The reference-method treadmill:</strong> The most pervasive tension across this week's literature is not between technologies — it is about what "soil organic carbon" actually means when measured. Wu et al. (2025) showed that a VIS-NIR model trained on Walkley-Black labels gives good Walkley-Black predictions but poor predictions of the same soils when re-evaluated against an elemental analyser (dry combustion). Gerenfes et al. (2022) found that LOI and Walkley-Black diverge significantly in Ethiopian Vertisols. Boyle et al. (2024) proved that LOI-to-C conversion ratios deviate from the universal 50% rule by up to a factor of two in high-organic Spodosols. Together, these three papers form a damning critique of the current ecosystem: every method is "accurate" relative to itself, but cross-method comparability — the cornerstone of any carbon market — is deeply unresolved. A new electrochemical sensor entering this ecosystem faces a choice: calibrate against the cheapest reference (WB or LOI) and inherit its biases, or calibrate against ISO 10694 dry combustion and accept higher upfront laboratory costs.
+    </p>
+    <p>
+      <strong>In-situ vs. ex-situ: what are we actually trying to measure?</strong> The Prasad-lab papers (Dhamu 2024, Eldeeb 2023) measure carbon electrochemically while the sensor is physically embedded in the soil — capturing the dissolved and loosely-sorbed organic fraction in near-real-time. Ng et al. (2026) and Wu et al. (2025) measure dried, homogenised samples: a fundamentally different physical state. This is not a minor technical detail — it means in-situ electrochemical readings reflect the biologically active labile carbon fraction, while spectral and classical methods typically quantify total SOC including recalcitrant forms. The debate is whether the labile fraction is a better proxy for soil health and crop response (arguably yes for farmers), or whether total SOC is required for carbon crediting purposes (currently yes for most registries). Resolving this gap is arguably the central open problem in the field, and it may require a new analytical concept — "sensor-defined SOC" — that is explicitly tied to an electrochemical transduction protocol rather than a wet-chemistry one.
+    </p>
+    <p>
+      <strong>Uncertainty as a first-class citizen:</strong> Wiens et al. (2025) stand apart by making uncertainty quantification the primary deliverable, not an afterthought. Most sensor and spectroscopy papers report R² and RMSE on held-out test sets, then declare success — but Wiens et al. demonstrate that even well-performing SERDS Raman models produce wide, poorly calibrated prediction intervals in the absence of explicit conformal prediction calibration. This is particularly important for carbon markets, where a soil C stock estimate with no stated uncertainty is valueless for insurance or hedging purposes. The broader scientific community is slowly converging on the view that a sensor reporting "2.3% SOC ± 0.5% (95% CI)" is fundamentally more useful than one reporting "2.3% SOC, R²=0.92" — but the electrochemical SOC sensing literature, including the Dhamu 2024 paper, does not yet report prediction intervals. Adopting conformal prediction as a calibration layer should be considered a near-term requirement for any commercially credible SOC sensing product.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FIELD OUTLOOK                                         -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>Field Outlook: Indian SOC Sensor Deployment</h2>
+  <div class="outlook-list">
+    <ul>
+      <li>
+        <strong>Calibrate against ISO 10694 dry combustion from day one.</strong> The multi-paper evidence that WB and LOI introduce soil-type-dependent biases — particularly severe in India's high-clay Vertisols and carbonate-rich arid soils of Rajasthan and Gujarat — means that any calibration dataset built on WB or LOI will require costly recalibration when entering carbon markets. Building the dry-combustion reference library upfront, even at higher per-sample cost, is cheaper than retrofitting it after product launch.
+      </li>
+      <li>
+        <strong>Design for labile-C transparency, not total-SOC opaqueness.</strong> Electrochemical in-situ sensors inherently read the biologically active dissolved organic carbon pool — a feature, not a bug, for farmer-facing soil health scoring. Explicitly positioning the sensor as a labile-SOC proxy (with a stated conversion factor to total SOC validated per agro-climatic zone) avoids the unsolvable problem of competing with a lab analyser on total-SOC accuracy, and aligns with India's National Mission for Sustainable Agriculture (NMSA) Soil Health Card framework that emphasises available nutrient fractions.
+      </li>
+      <li>
+        <strong>Implement conformal prediction uncertainty reporting as a regulatory differentiator.</strong> As the Wiens et al. (2025) framework demonstrates, generating statistically valid prediction intervals requires only a held-out calibration dataset and a one-time post-processing wrapper around any existing ML model. For an Indian SOC sensor seeking acceptance by VERRA, Gold Standard, or India's emerging CCTS carbon registry, providing measurements with quantified confidence bounds rather than single-point estimates will be a decisive advantage over competing tools that report only RMSE.
+      </li>
+      <li>
+        <strong>Prioritise multi-electrode co-detection of SOC + pH to unlock the broadest adoption pathway.</strong> The Espial pH sensor paper and the NPK electrochemical review both emerged from the same research group and use compatible PCB architectures — signalling that a single four-electrode array measuring SOC, pH, nitrate, and phosphate simultaneously is technically within reach. In India's smallholder context, where a single soil health test costs ₹190–300 at a government lab with a 3–4 week turnaround, a device that delivers all four parameters in under 5 minutes at the farm edge would address an acute pain point and justify per-test revenue that covers sensor amortisation within a single cropping season.
+      </li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- QUICK REFERENCE TABLE                                 -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>Quick Reference Table</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Title (abbreviated)</th>
+          <th>Method</th>
+          <th>Key Finding</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>In-Situ SOC via Smart-Electrochemical Sensing (Dhamu et al.)</td>
+          <td>Electrochemical</td>
+          <td>Gold/biochar/ionic-liquid PCB sensor measures SOC in intact soil without pre-treatment using square-pulsed excitation</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Espial: Electrochemical Soil pH Sensor (Eldeeb et al.)</td>
+          <td>Electrochemical</td>
+          <td>Alizarin/Nafion WE achieves −50 to −66 mV/pH with &lt;10% error over 7-day in-situ continuous deployment</td>
+          <td>2023</td>
+        </tr>
+        <tr>
+          <td>Electrochemical Sensors for Soil/Water NPK (Hossain et al.)</td>
+          <td>Electrochemical</td>
+          <td>Review confirms individual NPK electrochemical sensors are deployment-ready; multi-analyte co-detection is the remaining frontier</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Mobile NIR Spectroscopy Across Agricultural Land Types (Ng et al.)</td>
+          <td>Spectroscopic (NIR)</td>
+          <td>Real-time mobile NIRS retrieves SOC across 101 UK fields without seasonal recalibration</td>
+          <td>2026</td>
+        </tr>
+        <tr>
+          <td>Calibrated Uncertainty for SOC from Raman Spectra (Wiens et al.)</td>
+          <td>Spectroscopic (Raman)</td>
+          <td>Conformal prediction wraps any SERDS-Raman ML model to produce statistically valid SOC prediction intervals</td>
+          <td>2025</td>
+        </tr>
+        <tr>
+          <td>Robustness of VIS-NIR Prediction vs. Four Wet Chemistry Methods (Wu et al.)</td>
+          <td>Spectroscopic (VIS-NIR)</td>
+          <td>Cubist VIS-NIR model accuracy degrades significantly when reference method changes — exposing cross-method calibration inconsistency</td>
+          <td>2025</td>
+        </tr>
+        <tr>
+          <td>LOI vs. Potassium Dichromate in Ethiopian Soils (Gerenfes et al.)</td>
+          <td>Classical (LOI / WB)</td>
+          <td>Significant method divergence (p&lt;0.05) in high-clay tropical soils; LOI over-reports SOC due to structural water loss</td>
+          <td>2022</td>
+        </tr>
+        <tr>
+          <td>Refinement of C:LOI in Forest Soils (Boyle et al.)</td>
+          <td>Classical (LOI)</td>
+          <td>Universal 50% C:LOI rule fails in Spodosols; empirical depth-stratified equations needed for accurate carbon stock assessment</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Improved LOI Framework for Mangrove Soils (Breithaupt et al.)</td>
+          <td>Classical (LOI)</td>
+          <td>Six region-specific SOM-to-OC equations required across 17 coastal sites; single equation causes &gt;40% error in carbonate-rich settings</td>
+          <td>2023</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── PDF BUTTON ──────────────────────────────────────── -->
+  <div class="pdf-bar">
+    <button class="pdf-btn" onclick="window.print()">&#x1F4BE; Save as PDF</button>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    SOC Daily Research Brief &nbsp;·&nbsp; Generated June 02, 2026 &nbsp;·&nbsp; 9 papers reviewed &nbsp;·&nbsp; For internal use only
+  </footer>
+
+</div>
+</body>
+</html>
