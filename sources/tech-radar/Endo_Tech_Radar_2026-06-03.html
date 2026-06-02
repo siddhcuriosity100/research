@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endo Tech Radar</title><style>
+:root{--bg:#f8f9fa;--card:#fff;--accent:#1d3557;--secondary:#457b9d;--highlight:#2a9d8f;--text:#1b1b1b;--muted:#6c757d;}
+*{box-sizing:border-box;}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.55;}
+.wrap{max-width:900px;margin:0 auto;padding:32px 20px 64px;}
+header{border-bottom:3px solid var(--accent);padding-bottom:16px;margin-bottom:8px;}
+h1{color:var(--accent);font-size:1.95rem;margin:0 0 6px;}
+.sub{color:var(--muted);font-size:.95rem;}
+h2{color:var(--accent);font-size:1.3rem;margin:36px 0 6px;border-left:5px solid var(--highlight);padding-left:10px;}
+h3{color:var(--secondary);font-size:1.02rem;margin:22px 0 10px;text-transform:uppercase;letter-spacing:.5px;font-size:.85rem;}
+.note-box{background:#eef4f3;border-left:4px solid var(--highlight);border-radius:8px;padding:16px 18px;margin:14px 0 8px;}
+.card{background:var(--card);border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:16px 18px;margin-bottom:14px;}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+.card a.title{font-weight:600;color:var(--accent);text-decoration:none;font-size:1.06rem;}
+.card a.title:hover{text-decoration:underline;}
+.meta{color:var(--muted);font-size:.82rem;margin:3px 0 8px;}
+.desc{font-size:.92rem;margin:6px 0;}
+.why{font-size:.88rem;color:#333;background:#fafbfc;border-radius:6px;padding:8px 10px;margin-top:8px;}
+.badges{display:flex;gap:6px;flex-shrink:0;}
+.badge{display:flex;flex-direction:column;align-items:center;color:#fff;border-radius:8px;padding:4px 9px;min-width:46px;font-size:.7rem;line-height:1.2;}
+.badge b{font-size:1.05rem;}
+.tag{display:inline-block;border-radius:20px;padding:2px 9px;font-size:.68rem;font-weight:600;color:#fff;background:var(--highlight);margin-left:6px;vertical-align:middle;}
+.tag.update{background:#e76f51;}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-top:10px;}
+th{background:var(--accent);color:#fff;text-align:left;padding:9px 11px;font-size:.82rem;}
+td{padding:8px 11px;border-top:1px solid #eee;font-size:.86rem;vertical-align:top;}
+tr:nth-child(even) td{background:#fafbfc;}
+td a{color:var(--secondary);}
+.cb{font-weight:700;color:var(--accent);}
+.btn{display:inline-block;background:var(--highlight);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-size:1rem;cursor:pointer;margin:22px 0 6px;}
+.btn:hover{background:#21867a;}
+@media print{.btn{display:none;}body{background:#fff;}.card,table{box-shadow:none;}}
+</style></head><body><div class="wrap">
+<header><h1>Endo Tech Radar</h1><div class="sub">New &amp; updated tools across the Endo stack &middot; June 03, 2026</div></header>
+<button class="btn" onclick="window.print()">Save as PDF</button>
+<div class="note-box"><b>Editor's Note.</b> Today's standout is <b>TimescaleDB</b> (v2.26, Combined 15/15) in Time-series / IoT DB: Postgres-native TSDB with continuous aggregates — the easiest, most full-featured migration path off MongoDB with the entire SQL ecosystem. Two finds tie at a perfect 15 — TimescaleDB v2.26 and libmodbus — both directly serving the planned InfluxDB migration and our RS-485 sensor bus. Also worth a look: mochi-mqtt (embed the broker in the Go API) and Mender (atomic A/B OTA with rollback) as we scale toward 1000 devices.</div>
+<h2>New &amp; Notable</h2>
+<h3>Embedded firmware</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/espressif/esp-idf/releases" target="_blank">ESP-IDF</a><span class="tag">NEW</span>
+      <div class="meta">v6.0.1 &middot; 2026 &middot; C &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Espressif's official ESP32 development framework; FreeRTOS v10.5.1 SMP base. v6.0.1 reworks the main loop/scheduler/task-watchdog to recover CPU and power.</div>
+  <div class="why"><b>Why it matters:</b> Official framework we already build on; v6 brings power/CPU gains but plan the migration carefully (known regressions).</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://esphome.io/changelog/" target="_blank">ESPHome</a><span class="tag">NEW</span>
+      <div class="meta">2026.4.0 &middot; 2026-04 &middot; C++/Python &middot; MIT/GPL</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#adb5bd"><span>Rel</span><b>2</b></div></div>
+  </div>
+  <div class="desc">Declarative YAML-to-firmware system for ESP32/ESP8266 with a huge component library.</div>
+  <div class="why"><b>Why it matters:</b> Great for quick sensor-node prototypes but bypasses our custom LoRa firmware/OTA stack.</div>
+</div>
+<h3>LoRa / LoRaWAN</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/jgromes/RadioLib" target="_blank">RadioLib</a><span class="tag">NEW</span>
+      <div class="meta">master &middot; 2026 &middot; C++ &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Universal wireless library for SX127x, SX126x, LR11x0, LR2021, SX128x. LoRaWAN Class A/C (multicast over C), pre-certified for Class A.</div>
+  <div class="why"><b>Why it matters:</b> Covers our LoRa radios with pre-certified LoRaWAN Class A; strong fit for the EndNode firmware.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/chirpstack/chirpstack" target="_blank">ChirpStack</a><span class="tag">NEW</span>
+      <div class="meta">4.x &middot; 2026 &middot; Rust &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#e9c46a"><span>Ease</span><b>3</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#e9c46a"><span>Rel</span><b>3</b></div></div>
+  </div>
+  <div class="desc">Open-source LoRaWAN Network Server with web UI for gateways, devices, tenants and cloud/DB integrations.</div>
+  <div class="why"><b>Why it matters:</b> Full LoRaWAN server — useful if we adopt standard LoRaWAN; overkill for the current point-to-point EndNode->Gateway link.</div>
+</div>
+<h3>Go backend</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/mochi-mqtt/server" target="_blank">mochi-mqtt (server)</a><span class="tag">NEW</span>
+      <div class="meta">v2 &middot; 2026 &middot; Go &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Fully compliant, embeddable high-performance Go MQTT v5 broker for IoT; usable standalone or as a library. Performance comparable to Mosquitto/EMQX.</div>
+  <div class="why"><b>Why it matters:</b> Embed an MQTT v5 broker directly inside our Go API — removes a separate broker dependency on the cloud side.</div>
+</div>
+<h3>MQTT</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/nanomq/nanomq" target="_blank">NanoMQ</a><span class="tag">NEW</span>
+      <div class="meta">0.24.13 &middot; 2026-04-21 &middot; C &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Ultra-lightweight, blazing-fast MQTT broker/bus for IoT edge; up to 10x faster than Mosquitto on multi-core; pioneers MQTT over QUIC.</div>
+  <div class="why"><b>Why it matters:</b> Ideal edge broker for the RPi gateway. CAUTION: a May-2026 advisory flagged hidden REST endpoints / arbitrary file read / DoS in 0.24.13 — pin a patched build and lock down REST.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/emqx/emqx" target="_blank">EMQX</a><span class="tag">NEW</span>
+      <div class="meta">5.x &middot; 2026 &middot; Erlang &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Highly scalable, reliable MQTT broker for AI/IoT/IIoT and connected vehicles; MQTT over QUIC.</div>
+  <div class="why"><b>Why it matters:</b> Scalable broker for the Hetzner cloud side; heavier than needed at current device counts but room to grow into.</div>
+</div>
+<h3>Time-series / IoT DB</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/timescale/timescaledb" target="_blank">TimescaleDB</a><span class="tag">NEW</span>
+      <div class="meta">v2.26 &middot; 2026-03 &middot; C &middot; Apache-2.0 / TSL</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">PostgreSQL extension for time-series with hypertables, compression and continuous aggregates. v2.26 adds significant analytical query performance gains.</div>
+  <div class="why"><b>Why it matters:</b> Postgres-native TSDB with continuous aggregates — the easiest, most full-featured migration path off MongoDB with the entire SQL ecosystem.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/questdb/questdb" target="_blank">QuestDB</a><span class="tag">NEW</span>
+      <div class="meta">8.x &middot; 2026 &middot; Java/C++/Rust &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Purpose-built TSDB (Java/C++/Rust) optimized for ingestion + analytics; ingests InfluxDB line protocol & PostgreSQL wire; SQL queries. 12-36x faster ingest than InfluxDB 3.</div>
+  <div class="why"><b>Why it matters:</b> Extreme ingest throughput with SQL + InfluxDB line protocol compatibility — strong candidate for the planned InfluxDB migration.</div>
+</div>
+<h3>React Native</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/FormidableLabs/victory-native-xl" target="_blank">Victory Native (React Native Skia)</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; TypeScript &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#e9c46a"><span>Ease</span><b>3</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Charting for React Native; Skia GPU rendering keeps 10,000+ data points fluid where SVG-based libs stutter.</div>
+  <div class="why"><b>Why it matters:</b> GPU-rendered charts stay smooth at 10k+ sensor points — best fit for dense Endo dashboards.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/innoveit/react-native-ble-manager" target="_blank">react-native-ble-manager</a><span class="tag">NEW</span>
+      <div class="meta">12.4.5 &middot; 2026-02 &middot; TypeScript &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#e9c46a"><span>Rel</span><b>3</b></div></div>
+  </div>
+  <div class="desc">Most popular RN BLE module (scan, connect, discover services/characteristics, exchange data).</div>
+  <div class="why"><b>Why it matters:</b> Useful for on-site device commissioning over BLE; not core to our LoRa field comms.</div>
+</div>
+<h3>RPi / edge fleet management</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/mendersoftware/mender" target="_blank">Mender</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; Go &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">End-to-end OTA update manager for embedded Linux with dual A/B partitioning and automatic rollback on failed boot.</div>
+  <div class="why"><b>Why it matters:</b> Atomic A/B OTA with rollback for the RPi gateway fleet — far safer than custom OTA at 1000 devices.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/balena-io/open-balena" target="_blank">balena / openBalena</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; TypeScript &middot; AGPL-3.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Container-based platform to build, deploy and manage fleets of Linux IoT devices; openBalena is the self-hosted OSS core.</div>
+  <div class="why"><b>Why it matters:</b> Complete container-based fleet mgmt; powerful, but the container model is a shift from our current Pi setup.</div>
+</div>
+<h3>RS-485 / Modbus</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://libmodbus.org/" target="_blank">libmodbus</a><span class="tag">NEW</span>
+      <div class="meta">3.x &middot; 2026 &middot; C &middot; LGPL-2.1</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">The de-facto open-source C library for Modbus RTU (RS-232/485) and Modbus TCP communication.</div>
+  <div class="why"><b>Why it matters:</b> The standard, battle-tested Modbus RTU library — directly serves our RS-485 sensor bus on the gateway.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/3cky/mbusd" target="_blank">mbusd</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; C &middot; GPL-3.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Open-source Modbus TCP to Modbus RTU (RS-232/485) gateway daemon.</div>
+  <div class="why"><b>Why it matters:</b> Bridge RS-485 sensors to Modbus TCP on the RPi — handy for exposing the wired bus to networked services.</div>
+</div>
+<h3>Electrochemical sensing</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://pubs.acs.org/doi/10.1021/acs.analchem.2c04862" target="_blank">Hard Potato</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2025 &middot; Python &middot; OSS</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Python library to control commercial potentiostats and automate electrochemical experiments (CV, SWV, etc.).</div>
+  <div class="why"><b>Why it matters:</b> Automate potentiostat experiment runs in Python — speeds up Tier-5 electrode characterization.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/topics/voltammetry" target="_blank">RedoxPySolid</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2025 &middot; Python &middot; OSS</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#e9c46a"><span>Ease</span><b>3</b></div><div class="badge" style="background:#e9c46a"><span>Qual</span><b>3</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>5</b></div></div>
+  </div>
+  <div class="desc">Python package for data analysis and modeling of variable-frequency square-wave voltammetry (SWV).</div>
+  <div class="why"><b>Why it matters:</b> Purpose-built SWV analysis — directly applicable to our Tier-5 electrochemical SOC sensor R&D.</div>
+</div>
+<h3>Edge AI / TinyML</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://edgeimpulse.com/" target="_blank">Edge Impulse (EON Compiler)</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; Multi &middot; Proprietary (free tier)</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Web MLOps platform for TinyML; EON Compiler cuts NN RAM 25-55% and flash up to 35% for microcontrollers.</div>
+  <div class="why"><b>Why it matters:</b> Fastest path to on-device sensor inference on ESP32; EON compiler squeezes models into our RAM/flash budget.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/tensorflow/tflite-micro" target="_blank">TensorFlow Lite for Microcontrollers</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; C++ &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#e9c46a"><span>Ease</span><b>3</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Google's dominant TinyML runtime for quantized models on Cortex-M, ESP32 and similar MCUs.</div>
+  <div class="why"><b>Why it matters:</b> The established microcontroller ML runtime with ESP32 support; lower-level/more effort than Edge Impulse.</div>
+</div>
+<h3>Agentic dev tooling</h3>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/Aider-AI/aider" target="_blank">Aider</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; Python &middot; Apache-2.0</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#2a9d8f"><span>Ease</span><b>5</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#2a9d8f"><span>Rel</span><b>4</b></div></div>
+  </div>
+  <div class="desc">Strongest all-around open-source CLI coding agent in 2026: multi-file editing, git integration, works with any LLM.</div>
+  <div class="why"><b>Why it matters:</b> Model-agnostic coding agent fits our multi-model (Kimi/Claude/Gemini) workflow alongside the Pi Coding Agent.</div>
+</div>
+<div class="card">
+  <div class="top">
+    <div>
+      <a class="title" href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a><span class="tag">NEW</span>
+      <div class="meta">current &middot; 2026 &middot; Python &middot; MIT</div>
+    </div>
+    <div class="badges"><div class="badge" style="background:#e9c46a"><span>Ease</span><b>3</b></div><div class="badge" style="background:#2a9d8f"><span>Qual</span><b>4</b></div><div class="badge" style="background:#e9c46a"><span>Rel</span><b>3</b></div></div>
+  </div>
+  <div class="desc">Stateful graph runtime on LangChain; the most mature framework for long-running, stateful agents.</div>
+  <div class="why"><b>Why it matters:</b> Mature stateful agent runtime if we build custom orchestration; overlaps with the existing Pi Coding Agent setup.</div>
+</div>
+<h2>This Run — Quick Reference</h2>
+<table><tr><th>Tool</th><th>Category</th><th>Ease</th><th>Qual</th><th>Rel</th><th>Combined</th></tr><tr><td><a href='https://github.com/timescale/timescaledb' target='_blank'>TimescaleDB</a></td><td>Time-series / IoT DB</td><td>5</td><td>5</td><td>5</td><td class='cb'>15</td></tr><tr><td><a href='https://libmodbus.org/' target='_blank'>libmodbus</a></td><td>RS-485 / Modbus</td><td>5</td><td>5</td><td>5</td><td class='cb'>15</td></tr><tr><td><a href='https://github.com/espressif/esp-idf/releases' target='_blank'>ESP-IDF</a></td><td>Embedded firmware</td><td>4</td><td>5</td><td>5</td><td class='cb'>14</td></tr><tr><td><a href='https://github.com/jgromes/RadioLib' target='_blank'>RadioLib</a></td><td>LoRa / LoRaWAN</td><td>4</td><td>5</td><td>5</td><td class='cb'>14</td></tr><tr><td><a href='https://github.com/mochi-mqtt/server' target='_blank'>mochi-mqtt (server)</a></td><td>Go backend</td><td>5</td><td>4</td><td>5</td><td class='cb'>14</td></tr><tr><td><a href='https://github.com/mendersoftware/mender' target='_blank'>Mender</a></td><td>RPi / edge fleet management</td><td>4</td><td>5</td><td>5</td><td class='cb'>14</td></tr><tr><td><a href='https://github.com/nanomq/nanomq' target='_blank'>NanoMQ</a></td><td>MQTT</td><td>4</td><td>4</td><td>5</td><td class='cb'>13</td></tr><tr><td><a href='https://github.com/emqx/emqx' target='_blank'>EMQX</a></td><td>MQTT</td><td>4</td><td>5</td><td>4</td><td class='cb'>13</td></tr><tr><td><a href='https://github.com/questdb/questdb' target='_blank'>QuestDB</a></td><td>Time-series / IoT DB</td><td>4</td><td>4</td><td>5</td><td class='cb'>13</td></tr><tr><td><a href='https://github.com/balena-io/open-balena' target='_blank'>balena / openBalena</a></td><td>RPi / edge fleet management</td><td>4</td><td>5</td><td>4</td><td class='cb'>13</td></tr><tr><td><a href='https://edgeimpulse.com/' target='_blank'>Edge Impulse (EON Compiler)</a></td><td>Edge AI / TinyML</td><td>5</td><td>4</td><td>4</td><td class='cb'>13</td></tr><tr><td><a href='https://github.com/Aider-AI/aider' target='_blank'>Aider</a></td><td>Agentic dev tooling</td><td>5</td><td>4</td><td>4</td><td class='cb'>13</td></tr><tr><td><a href='https://esphome.io/changelog/' target='_blank'>ESPHome</a></td><td>Embedded firmware</td><td>5</td><td>5</td><td>2</td><td class='cb'>12</td></tr><tr><td><a href='https://github.com/FormidableLabs/victory-native-xl' target='_blank'>Victory Native (React Native Skia)</a></td><td>React Native</td><td>3</td><td>4</td><td>5</td><td class='cb'>12</td></tr><tr><td><a href='https://github.com/3cky/mbusd' target='_blank'>mbusd</a></td><td>RS-485 / Modbus</td><td>4</td><td>4</td><td>4</td><td class='cb'>12</td></tr><tr><td><a href='https://pubs.acs.org/doi/10.1021/acs.analchem.2c04862' target='_blank'>Hard Potato</a></td><td>Electrochemical sensing</td><td>4</td><td>4</td><td>4</td><td class='cb'>12</td></tr><tr><td><a href='https://github.com/tensorflow/tflite-micro' target='_blank'>TensorFlow Lite for Microcontrollers</a></td><td>Edge AI / TinyML</td><td>3</td><td>5</td><td>4</td><td class='cb'>12</td></tr><tr><td><a href='https://github.com/chirpstack/chirpstack' target='_blank'>ChirpStack</a></td><td>LoRa / LoRaWAN</td><td>3</td><td>5</td><td>3</td><td class='cb'>11</td></tr><tr><td><a href='https://github.com/innoveit/react-native-ble-manager' target='_blank'>react-native-ble-manager</a></td><td>React Native</td><td>4</td><td>4</td><td>3</td><td class='cb'>11</td></tr><tr><td><a href='https://github.com/topics/voltammetry' target='_blank'>RedoxPySolid</a></td><td>Electrochemical sensing</td><td>3</td><td>3</td><td>5</td><td class='cb'>11</td></tr><tr><td><a href='https://github.com/langchain-ai/langgraph' target='_blank'>LangGraph</a></td><td>Agentic dev tooling</td><td>3</td><td>4</td><td>3</td><td class='cb'>10</td></tr></table>
+<h2>All-Time Leaderboard (Top 12)</h2>
+<table><tr><th>#</th><th>Tool</th><th>Category</th><th>Combined</th><th>First seen</th></tr><tr><td>1</td><td><a href='https://github.com/timescale/timescaledb' target='_blank'>TimescaleDB</a></td><td>Time-series / IoT DB</td><td class='cb'>15</td><td>2026-06-03</td></tr><tr><td>2</td><td><a href='https://libmodbus.org/' target='_blank'>libmodbus</a></td><td>RS-485 / Modbus</td><td class='cb'>15</td><td>2026-06-03</td></tr><tr><td>3</td><td><a href='https://github.com/espressif/esp-idf/releases' target='_blank'>ESP-IDF</a></td><td>Embedded firmware</td><td class='cb'>14</td><td>2026-06-03</td></tr><tr><td>4</td><td><a href='https://github.com/jgromes/RadioLib' target='_blank'>RadioLib</a></td><td>LoRa / LoRaWAN</td><td class='cb'>14</td><td>2026-06-03</td></tr><tr><td>5</td><td><a href='https://github.com/mochi-mqtt/server' target='_blank'>mochi-mqtt (server)</a></td><td>Go backend</td><td class='cb'>14</td><td>2026-06-03</td></tr><tr><td>6</td><td><a href='https://github.com/mendersoftware/mender' target='_blank'>Mender</a></td><td>RPi / edge fleet management</td><td class='cb'>14</td><td>2026-06-03</td></tr><tr><td>7</td><td><a href='https://github.com/nanomq/nanomq' target='_blank'>NanoMQ</a></td><td>MQTT</td><td class='cb'>13</td><td>2026-06-03</td></tr><tr><td>8</td><td><a href='https://github.com/emqx/emqx' target='_blank'>EMQX</a></td><td>MQTT</td><td class='cb'>13</td><td>2026-06-03</td></tr><tr><td>9</td><td><a href='https://github.com/questdb/questdb' target='_blank'>QuestDB</a></td><td>Time-series / IoT DB</td><td class='cb'>13</td><td>2026-06-03</td></tr><tr><td>10</td><td><a href='https://github.com/balena-io/open-balena' target='_blank'>balena / openBalena</a></td><td>RPi / edge fleet management</td><td class='cb'>13</td><td>2026-06-03</td></tr><tr><td>11</td><td><a href='https://edgeimpulse.com/' target='_blank'>Edge Impulse (EON Compiler)</a></td><td>Edge AI / TinyML</td><td class='cb'>13</td><td>2026-06-03</td></tr><tr><td>12</td><td><a href='https://github.com/Aider-AI/aider' target='_blank'>Aider</a></td><td>Agentic dev tooling</td><td class='cb'>13</td><td>2026-06-03</td></tr></table>
+<button class="btn" onclick="window.print()">Save as PDF</button>
+</div></body></html>
