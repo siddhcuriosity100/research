@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC Daily Research Brief — June 03, 2026</title>
+<style>
+  :root{
+    --bg:#f8f9fa; --card:#ffffff; --accent:#2d6a4f; --secondary:#52b788;
+    --text:#1b1b1b; --grey:#9aa5a1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin:0; line-height:1.6; padding:0 16px;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:32px 0 64px;}
+  header.masthead{border-bottom:3px solid var(--accent); padding-bottom:18px; margin-bottom:24px;}
+  header.masthead h1{margin:0 0 4px; font-size:30px; color:var(--accent); letter-spacing:-0.5px;}
+  header.masthead .sub{color:#555; font-size:15px;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:10px; font-size:13px; color:#555;}
+  .meta-row b{color:var(--text);}
+  h2.section{
+    font-size:21px; color:var(--accent); margin:38px 0 14px;
+    border-left:5px solid var(--secondary); padding-left:12px;
+  }
+  .note, .actions, .debate, .outlook{
+    background:var(--card); border-radius:10px; padding:20px 22px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+  }
+  .note p{margin:0; font-size:16px;}
+  .note .lead{font-weight:600; color:var(--accent);}
+  .actions ol{margin:4px 0 0; padding-left:20px;}
+  .actions li{margin-bottom:14px;}
+  .actions .why{color:#444; font-size:14px;}
+  .card{
+    background:var(--card); border-radius:10px; padding:18px 20px; margin-bottom:16px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06); border-left:4px solid var(--secondary);
+  }
+  .card .top{display:flex; align-items:flex-start; gap:12px;}
+  .badge{
+    flex:0 0 auto; width:38px; height:38px; border-radius:50%;
+    color:#fff; font-weight:700; font-size:17px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .b5,.b4{background:var(--accent);}
+  .b3{background:var(--secondary);}
+  .b2,.b1{background:var(--grey);}
+  .card h3{margin:0 0 4px; font-size:17px; line-height:1.35;}
+  .card h3 a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--secondary);}
+  .card h3 a:hover{color:var(--accent);}
+  .byline{font-size:13px; color:#666; margin:0 0 8px;}
+  .synth{margin:8px 0 10px; font-size:14.5px;}
+  .tagrow{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .tag{
+    display:inline-block; background:#e7f1ec; color:var(--accent);
+    font-size:12px; font-weight:600; padding:3px 10px; border-radius:20px;
+  }
+  .just{font-size:12.5px; color:#777; font-style:italic;}
+  .debate p{margin:0 0 12px;}
+  .debate p:last-child{margin-bottom:0;}
+  .outlook ul{margin:4px 0 0; padding-left:20px;}
+  .outlook li{margin-bottom:9px;}
+  table{
+    width:100%; border-collapse:collapse; background:var(--card);
+    border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.06); font-size:13.5px;
+  }
+  th,td{padding:10px 12px; text-align:left; vertical-align:top; border-bottom:1px solid #eee;}
+  th{background:var(--accent); color:#fff; font-weight:600;}
+  td.sc{font-weight:700; text-align:center;}
+  tr:last-child td{border-bottom:none;}
+  .scpill{display:inline-block; min-width:24px; padding:2px 8px; border-radius:14px; color:#fff;}
+  .print-btn{
+    display:inline-block; margin-top:8px; background:var(--accent); color:#fff;
+    border:none; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:600;
+    cursor:pointer; box-shadow:0 2px 8px rgba(45,106,79,0.3);
+  }
+  .print-btn:hover{background:#245840;}
+  footer{margin-top:40px; font-size:12px; color:#888; text-align:center;}
+  @media print{
+    .print-btn{display:none;} body{background:#fff;}
+    .card,.note,.actions,.debate,.outlook,table{box-shadow:none; border:1px solid #ddd;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>SOC Daily Research Brief</h1>
+    <div class="sub">Soil Organic Carbon Measurement &mdash; Founder Lens: low-cost electrochemical SOC sensing for Indian smallholder farms</div>
+    <div class="meta-row">
+      <span><b>Date:</b> June 03, 2026</span>
+      <span><b>Papers:</b> 9 (3 electrochemical &middot; 3 spectroscopic &middot; 3 classical)</span>
+      <span><b>Top lead:</b> Dhamu et&nbsp;al. 2024 &mdash; in-situ SOC by square-wave voltammetry (score 5)</span>
+    </div>
+    <button class="print-btn" onclick="window.print()">Save as PDF</button>
+  </header>
+
+  <!-- 1. EDITOR'S NOTE -->
+  <h2 class="section">Editor&rsquo;s Note</h2>
+  <div class="note">
+    <p><span class="lead">The single most actionable finding today:</span> Dhamu et&nbsp;al. (Sensors, 2024) show that <b>square-wave voltammetry on soil used directly as a solid-phase electrolyte</b> &mdash; no slurry, no pretreatment &mdash; produces a peak-current signal that tracks soil organic carbon. Paired with the same group&rsquo;s alizarin/Nafion drop-cast pH electrode (validated to &lt;10% error across untrained soil textures), you have a concrete, low-cost electrode recipe and signal-processing window to clone this quarter. The catch the classical bucket flags: ground-truth against dry combustion (CHN), not Walkley-Black or loss-on-ignition, or you will bake reference-method bias into your calibration from day one.</p>
+  </div>
+
+  <!-- 2. WHAT I'D ACT ON THIS WEEK -->
+  <h2 class="section">What I&rsquo;d Act On This Week</h2>
+  <div class="actions">
+    <ol>
+      <li>
+        <b>Clone the square-wave voltammetry (SWV) readout and skip sample prep.</b>
+        Replicate the polarization-potential window from
+        <a href="https://www.mdpi.com/1424-8220/24/4/1153" target="_blank">Dhamu et&nbsp;al. 2024</a>,
+        treating soil as a solid-phase electrolyte and correlating the SWV peak current to SOC.
+        <span class="why"><i>Why for India:</i> smallholder field use demands zero benchtop prep &mdash; an insert-and-read probe is the only workable form factor, and SWV gives you that directly.</span>
+      </li>
+      <li>
+        <b>Trial an alizarin + Nafion drop-cast coating on a cheap screen-printed electrode.</b>
+        Borrow the coating chemistry and fabrication from
+        <a href="https://www.mdpi.com/2072-666X/14/12/2188" target="_blank">Eldeeb et&nbsp;al. 2023 (Espial pH)</a>,
+        which held &lt;10% error on soil textures it was never calibrated on.
+        <span class="why"><i>Why for India:</i> drop-casting is sub-cent-scale per unit and cross-texture robustness directly de-risks deployment across black, red, and alluvial soils.</span>
+      </li>
+      <li>
+        <b>Build a multi-texture calibration set and validate to a &lt;10% error bar.</b>
+        Mirror the EIS / ion-selective-electrode validation protocol in
+        <a href="https://www.mdpi.com/2072-666X/14/7/1314" target="_blank">Eldeeb et&nbsp;al. 2023 (nitrate, R&sup2;&gt;0.97)</a>
+        &mdash; assemble 4&ndash;6 Indian soil textures spanning your SOC range and fit per-texture regressions.
+        <span class="why"><i>Why for India:</i> texture-driven matrix effects are the #1 field-failure mode; proving cross-texture transfer is what turns a lab demo into a product.</span>
+      </li>
+      <li>
+        <b>Ground-truth only against dry-combustion (CHN), and calibrate locally.</b>
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0272771425000605" target="_blank">The Madagascar mangrove study (2025)</a>
+        found WB, LOI400, LOI550 and CHN disagree by 2&ndash;4&times; on the same samples; they used CHN as the anchor.
+        <span class="why"><i>Why for India:</i> if your &ldquo;truth&rdquo; labels come from a cheap Walkley-Black lab, your sensor inherits a regional bias &mdash; lock the training labels to dry combustion and refit per agro-region.</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- 3. PAPERS BY METHOD -->
+  <h2 class="section">Papers by Method &mdash; Electrochemical</h2>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b5">5</div>
+      <div>
+        <h3><a href="https://www.mdpi.com/1424-8220/24/4/1153" target="_blank">Characterization of an In-Situ Soil Organic Carbon (SOC) via a Smart-Electrochemical Sensing Approach</a></h3>
+        <p class="byline">Dhamu, Somenahally, Paul, Muthukumar &amp; Prasad &middot; 2024 &middot; <i>Sensors</i> 24(4):1153</p>
+        <p class="synth">Uses square-wave voltammetry (SWV) with soil acting as a solid-phase electrolyte; an electrode probe is functionalized and biased with square pulses to interrogate the organic-carbon pool. A specific potential window is identified where the polarized surface interacts with SOC, and the peak current at that potential correlates to SOC level. Positioned as a complementary, in-situ, real-time alternative to lab protocols.</p>
+        <div class="tagrow">
+          <span class="tag">Square-wave voltammetry</span>
+          <span class="just">Directly actionable: electrochemical, in-situ, SOC-specific.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b5">5</div>
+      <div>
+        <h3><a href="https://www.mdpi.com/2072-666X/14/12/2188" target="_blank">Espial: Electrochemical Soil pH Sensor for In Situ Real-Time Monitoring</a></h3>
+        <p class="byline">Eldeeb, Dhamu, Paul, Muthukumar &amp; Prasad &middot; 2023 &middot; <i>Micromachines</i> 14(12):2188</p>
+        <p class="synth">A first-of-its-kind electrochemical sensor giving direct, continuous soil pH with no pretreatment, using an alizarin&ndash;Nafion composite drop-cast onto the working electrode. Validation showed &lt;10% error versus reference pH across multiple soil textures, including textures absent from the calibration set. Demonstrates a cheap, robust, transferable coating-and-readout recipe.</p>
+        <div class="tagrow">
+          <span class="tag">Drop-cast electrode coating</span>
+          <span class="just">Directly transferable electrode chemistry + cross-texture calibration.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b4">4</div>
+      <div>
+        <h3><a href="https://www.mdpi.com/2072-666X/14/7/1314" target="_blank">Electrochemical Soil Nitrate Sensor for In Situ Real-Time Monitoring</a></h3>
+        <p class="byline">Eldeeb, Dhamu, Paul, Muthukumar &amp; Prasad &middot; 2023 &middot; <i>Micromachines</i> 14(7):1314</p>
+        <p class="synth">An ion-selective-electrode sensor using electrochemical impedance spectroscopy (EIS) for direct, continuous soil nitrate sensing without pretreatment. Non-linear regression gave R&sup2;&gt;0.97 across soil textures over 5&ndash;512&nbsp;ppm nitrate. Different analyte, but the in-soil sensor architecture, no-prep workflow, and multi-texture validation transfer cleanly to an SOC probe.</p>
+        <div class="tagrow">
+          <span class="tag">EIS / ion-selective electrode</span>
+          <span class="just">Strongly relevant sensor architecture; analyte differs from SOC.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section">Papers by Method &mdash; Spectroscopic</h2>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b4">4</div>
+      <div>
+        <h3><a href="https://www.mdpi.com/1424-8220/22/16/6124" target="_blank">Estimation of Soil Organic Carbon Using Vis-NIR Spectral Data and Spectral Feature Bands Selection in Southern Xinjiang, China</a></h3>
+        <p class="byline">Sensors editorial collection &middot; 2022 &middot; <i>Sensors</i> 22(16):6124</p>
+        <p class="synth">Estimates SOC from visible/near-infrared spectra in an arid, low-organic-carbon region using spectral feature-band selection to cut dimensionality before modeling. Shows that selecting informative bands rather than using full spectra improves prediction in challenging low-SOC soils. The arid, low-carbon setting is a useful analogue for many Indian dryland soils.</p>
+        <div class="tagrow">
+          <span class="tag">Vis-NIR + feature selection</span>
+          <span class="just">Transferable calibration approach for arid, low-SOC soils like India&rsquo;s.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b3">3</div>
+      <div>
+        <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169924001510" target="_blank">Improving the estimation accuracy of soil organic matter based on the fusion of near-infrared and Raman spectroscopy using outer-product analysis</a></h3>
+        <p class="byline">Computers and Electronics in Agriculture &middot; 2024 &middot; vol. 219</p>
+        <p class="synth">Compares two NIR&ndash;Raman fusion strategies (direct concatenation vs. outer-product analysis) with PLS and random-forest models. Raman alone predicted SOM poorly (fluorescence, weak signal), but fusion with NIR markedly improved robustness, with outer-product analysis best at capturing complementary information. A chemometric blueprint for squeezing accuracy from imperfect, noisy signals.</p>
+        <div class="tagrow">
+          <span class="tag">Data fusion / chemometrics</span>
+          <span class="just">Transferable multivariate technique; not electrochemical.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b3">3</div>
+      <div>
+        <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169921005664" target="_blank">A method combining FTIR-ATR and Raman spectroscopy to determine soil organic matter: improvement of prediction accuracy using competitive adaptive reweighted sampling (CARS)</a></h3>
+        <p class="byline">Xing, Du, Shen, Ma &amp; Zhou &middot; 2021 &middot; <i>Computers and Electronics in Agriculture</i> 191:106549</p>
+        <p class="synth">Fuses FTIR-ATR and Raman spectra for SOM, then uses competitive adaptive reweighted sampling (CARS) to select the most informative variables before fusion. Models on the CARS-selected, fused variables outperformed single-technique and full-spectrum models. CARS-style variable selection is exactly the kind of lightweight feature pruning that suits a cheap, low-channel sensor.</p>
+        <div class="tagrow">
+          <span class="tag">CARS variable selection</span>
+          <span class="just">Useful feature-selection technique transferable to low-cost sensing.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section">Papers by Method &mdash; Classical</h2>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b4">4</div>
+      <div>
+        <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272771425000605" target="_blank">Development of soil organic carbon quantification model and comparison based on CHN analyser, Loss on Ignition, and Walkley-Black methods for mangrove soils in Madagascar</a></h3>
+        <p class="byline">Estuarine, Coastal and Shelf Science &middot; 2025</p>
+        <p class="synth">Ran 1,327 samples through WB, LOI400, LOI550 and CHN; the four methods differed significantly (p&lt;0.001), from 1.93% (CHN) up to 7.33% (LOI550) on the same soils. CHN was taken as the accurate reference and used to calibrate the others via linear regression. A blunt warning that your &ldquo;ground truth&rdquo; choice can swing labels by 2&ndash;4&times;.</p>
+        <div class="tagrow">
+          <span class="tag">CHN / LOI / Walkley-Black</span>
+          <span class="just">Reference-method bias is critical when labeling sensor training data.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b3">3</div>
+      <div>
+        <h3><a href="https://doi.org/10.32473/edis-ss721-2023" target="_blank">Current and Emerging Protocols for Carbon Measurement in Agricultural Soils</a></h3>
+        <p class="byline">Melkani, Manirakiza, Baker &amp; Bhadha &middot; 2023 &middot; <i>EDIS</i> SS721, Univ. of Florida/IFAS</p>
+        <p class="synth">An extension review mapping established lab protocols (dry combustion, wet oxidation, loss-on-ignition) alongside emerging in-field and proximal-sensing approaches for agricultural soil carbon. Useful for situating where a low-cost electrochemical sensor sits in the measurement landscape and which incumbents it must benchmark against. Background, not a new method.</p>
+        <div class="tagrow">
+          <span class="tag">Protocol review</span>
+          <span class="just">Helpful landscape/background framing of competing methods.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="top">
+      <div class="badge b2">2</div>
+      <div>
+        <h3><a href="https://www.researchgate.net/publication/369916707_Comparison_Between_Walkley-Black_and_Loss_On_Ignition_Methods_for_Organic_Matter_Estimation_in_Different_Moroccan_Soils" target="_blank">Comparison Between Walkley-Black and Loss On Ignition Methods for Organic Matter Estimation in Different Moroccan Soils</a></h3>
+        <p class="byline">ResearchGate (peer-reviewed) &middot; 2023</p>
+        <p class="synth">Compares Walkley-Black wet oxidation against loss-on-ignition across Moroccan soil types and derives region-specific conversion factors (e.g. ~1.15 and ~1.30 from dry-combustion carbon). Reinforces that conversion constants are local, not universal. Region-specific and method-internal, with limited direct bearing on electrochemical sensing.</p>
+        <div class="tagrow">
+          <span class="tag">WB vs LOI conversion</span>
+          <span class="just">Tangential: region-specific conversion factors, not sensor-facing.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SCIENTISTS' DEBATE -->
+  <h2 class="section">Scientists&rsquo; Debate</h2>
+  <div class="debate">
+    <p>The sharpest tension today is <b>&ldquo;measure the carbon directly&rdquo; versus &ldquo;infer it from a correlated signal.&rdquo;</b> The electrochemical and spectroscopic camps both reject the classical lab&rsquo;s destructive chemistry, but they disagree on what to trust. Dhamu&rsquo;s SWV approach claims a quasi-direct electrochemical interaction with the organic-carbon pool; the Vis-NIR and NIR&ndash;Raman fusion papers concede openly that their signal is an indirect proxy that only becomes accurate after heavy chemometric machinery (outer-product fusion, CARS variable selection, random forests). For a founder, this is not academic: a &ldquo;direct&rdquo; voltammetric peak promises a simpler, cheaper device with a shorter calibration chain, whereas the spectroscopic route is provably accurate but leans on models that can silently overfit to the soils they were trained on.</p>
+    <p>The classical bucket then drops an uncomfortable referee into the room. The Madagascar study shows that the very methods everyone uses to <i>define</i> &ldquo;true&rdquo; SOC &mdash; CHN, LOI, Walkley-Black &mdash; disagree by a factor of two to four on identical samples, and the Moroccan study shows the conversion factors that reconcile them are local, not universal. So when a spectroscopic paper reports an impressive R&sup2;, it is reporting agreement with <i>one</i> chosen reference method that may itself be biased by 30&ndash;300%. The electrochemical papers sidestep this only partially: Espial and the nitrate sensor validate against reference instruments too, and inherit whatever bias those carry.</p>
+    <p>The synthesis a builder should take away: the proxy-versus-direct debate is real, but it is downstream of a more fundamental labeling problem. Whichever transduction you pick, your accuracy ceiling is set by the reference method you calibrate against. The electrochemical route wins on cost and field-readiness; the spectroscopic route wins on demonstrated accuracy and mature chemometrics; and the classical literature&rsquo;s contribution today is the warning that <i>both</i> are only as honest as their ground truth &mdash; which, for Indian soils, must be locally re-anchored to dry combustion.</p>
+  </div>
+
+  <!-- 5. FIELD OUTLOOK -->
+  <h2 class="section">Field Outlook &mdash; Indian Deployment</h2>
+  <div class="outlook">
+    <ul>
+      <li><b>No-prep, insert-and-read is achievable now.</b> Both Dhamu (SWV-SOC) and the Espial/nitrate sensors operate directly in soil with no pretreatment &mdash; the right ergonomic for smallholder fields without lab access.</li>
+      <li><b>Cross-texture robustness is the make-or-break metric.</b> Espial&rsquo;s &lt;10% error on untrained textures is the bar to clear across India&rsquo;s black (Vertisol), red (Alfisol), and alluvial soils; budget a multi-texture calibration campaign before any pilot.</li>
+      <li><b>Anchor calibration to dry combustion, refit per agro-region.</b> The 2&ndash;4&times; spread across CHN/LOI/WB means a single national calibration will be wrong somewhere; plan region-specific linear corrections, validated against CHN where possible.</li>
+      <li><b>Borrow chemometrics, not hardware, from the spectroscopy camp.</b> CARS-style variable selection and fusion modeling can lift a cheap, low-channel electrochemical signal &mdash; useful even if NIR/Raman instruments themselves stay out of budget for field units.</li>
+    </ul>
+  </div>
+
+  <!-- 6. QUICK REFERENCE TABLE -->
+  <h2 class="section">Quick Reference Table</h2>
+  <table>
+    <thead>
+      <tr><th>Score</th><th>Title</th><th>Method</th><th>Key Finding</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sc"><span class="scpill b5">5</span></td>
+        <td><a href="https://www.mdpi.com/1424-8220/24/4/1153" target="_blank">In-Situ SOC via Smart-Electrochemical Sensing</a></td>
+        <td>Square-wave voltammetry</td>
+        <td>SWV peak current at a specific potential tracks SOC; soil as solid electrolyte, no prep.</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b5">5</span></td>
+        <td><a href="https://www.mdpi.com/2072-666X/14/12/2188" target="_blank">Espial: Electrochemical Soil pH Sensor</a></td>
+        <td>Alizarin/Nafion drop-cast electrode</td>
+        <td>&lt;10% error vs reference pH across untrained soil textures, no pretreatment.</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b4">4</span></td>
+        <td><a href="https://www.mdpi.com/2072-666X/14/7/1314" target="_blank">Electrochemical Soil Nitrate Sensor</a></td>
+        <td>EIS / ion-selective electrode</td>
+        <td>R&sup2;&gt;0.97 over 5&ndash;512&nbsp;ppm across textures; transferable in-soil architecture.</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b4">4</span></td>
+        <td><a href="https://www.mdpi.com/1424-8220/22/16/6124" target="_blank">Vis-NIR SOC, Southern Xinjiang</a></td>
+        <td>Vis-NIR + feature-band selection</td>
+        <td>Feature-band selection improves SOC prediction in arid, low-carbon soils.</td>
+        <td>2022</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b4">4</span></td>
+        <td><a href="https://www.sciencedirect.com/science/article/abs/pii/S0272771425000605" target="_blank">CHN vs LOI vs Walkley-Black, Madagascar</a></td>
+        <td>Classical lab comparison</td>
+        <td>Methods differ 2&ndash;4&times; on same soils (1.93&ndash;7.33%); CHN used to calibrate others.</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b3">3</span></td>
+        <td><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169924001510" target="_blank">NIR&ndash;Raman Fusion (Outer-Product)</a></td>
+        <td>Spectral fusion / chemometrics</td>
+        <td>Outer-product NIR&ndash;Raman fusion beats single-technique SOM models.</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b3">3</span></td>
+        <td><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169921005664" target="_blank">FTIR-ATR + Raman with CARS</a></td>
+        <td>CARS variable selection</td>
+        <td>CARS-selected fused variables give best SOM prediction accuracy.</td>
+        <td>2021</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b3">3</span></td>
+        <td><a href="https://doi.org/10.32473/edis-ss721-2023" target="_blank">Emerging Protocols for Soil Carbon</a></td>
+        <td>Protocol review</td>
+        <td>Maps established + emerging proximal/in-field carbon measurement methods.</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td class="sc"><span class="scpill b2">2</span></td>
+        <td><a href="https://www.researchgate.net/publication/369916707_Comparison_Between_Walkley-Black_and_Loss_On_Ignition_Methods_for_Organic_Matter_Estimation_in_Different_Moroccan_Soils" target="_blank">WB vs LOI, Moroccan Soils</a></td>
+        <td>WB vs LOI conversion</td>
+        <td>Region-specific conversion factors (~1.15&ndash;1.30); constants are not universal.</td>
+        <td>2023</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Generated June 03, 2026 &middot; Founder-lens scoring: relevance to building a low-cost electrochemical SOC sensor for Indian smallholder farms &middot; 9 papers across 3 methods.
+  </footer>
+
+</div>
+</body>
+</html>
