@@ -1,160 +1,42 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Endo Tech Radar &mdash; Master Index</title><style>
-:root{--bg:#f8f9fa;--card:#fff;--accent:#1d3557;--secondary:#457b9d;--highlight:#2a9d8f;--text:#1b1b1b;}
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Endo Tech Radar — Master Index</title><style>
+:root{--accent:#1d3557;--secondary:#457b9d;--highlight:#2a9d8f;--text:#1b1b1b;}
 *{box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:0 16px 64px;}
-.wrap{max-width:900px;margin:0 auto;}
-header{padding:32px 0 8px;}
-h1{color:var(--accent);margin:0 0 4px;font-size:1.9rem;}
-.sub{color:var(--secondary);font-weight:500;}
-h2{color:var(--accent);border-bottom:2px solid var(--secondary);padding-bottom:6px;margin-top:40px;}
-h3{color:var(--secondary);margin:28px 0 12px;font-size:1.15rem;}
-.note{background:var(--card);border-left:5px solid var(--highlight);padding:16px 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin:16px 0;}
-.card{background:var(--card);border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.09);padding:16px 20px;margin:14px 0;}
+body{background:#f8f9fa;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:0 16px;}
+.wrap{max-width:900px;margin:0 auto;padding:32px 0 64px;}
+h1{color:var(--accent);font-size:1.9rem;margin:0 0 4px;}
+h2{color:var(--accent);font-size:1.3rem;margin:36px 0 12px;border-bottom:2px solid var(--secondary);padding-bottom:6px;}
+h3{color:var(--secondary);font-size:1rem;margin:28px 0 10px;text-transform:uppercase;letter-spacing:.05em;}
+.sub{color:var(--secondary);font-size:.95rem;margin:0 0 8px;}
+.note{background:#fff;border-left:5px solid var(--highlight);padding:16px 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin:16px 0;}
+.card{background:#fff;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.1);padding:18px 20px;margin:14px 0;}
 .card .top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;}
-.card a{color:var(--accent);text-decoration:none;font-weight:700;font-size:1.1rem;}
-.card a:hover{text-decoration:underline;}
-.meta{color:var(--secondary);font-size:.85rem;}
-.tag{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:10px;color:#fff;text-transform:uppercase;letter-spacing:.5px;}
-.tag.new{background:var(--highlight);}
-.tag.update{background:var(--secondary);}
-.badges{margin:10px 0 6px;}
-.badge{display:inline-block;color:#fff;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:6px;margin-right:6px;}
-.just{font-style:italic;color:#555;font-size:.9rem;margin-top:6px;}
-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.09);margin:16px 0;}
-th{background:var(--accent);color:#fff;text-align:left;padding:10px 12px;font-size:.85rem;}
-td{padding:9px 12px;border-top:1px solid #eee;font-size:.88rem;}
-tr:hover td{background:#f1f5f8;}
-td a{color:var(--secondary);text-decoration:none;}
-.comb{font-weight:700;color:var(--accent);}
-.pdfbtn{position:sticky;top:12px;float:right;background:var(--highlight);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15);}
-.pdfbtn:hover{background:#21867a;}
-footer{color:var(--secondary);font-size:.8rem;margin-top:40px;text-align:center;}
-@media print{.pdfbtn{display:none;}body{padding:0;}.card,table,.note{box-shadow:none;border:1px solid #ddd;}}
-</style></head>
-<body><button class="pdfbtn" onclick="window.print()">Save as PDF</button><div class="wrap">
-<header><h1>Endo Tech Radar &mdash; Master Index</h1>
-<div class="sub">Every tracked tool, sorted by Combined &middot; 29 tools &middot; updated June 02, 2026</div></header>
-<table><thead><tr>
-<th>Tool</th><th>Category</th><th>Version</th><th>Released</th><th>Ease</th><th>Quality</th><th>Relevance</th><th>Combined</th>
-<th>Lang</th><th>License</th><th>First Seen</th><th>Last Seen</th><th>Link</th></tr></thead>
-<tbody><tr>
-<td>TimescaleDB</td><td>Time-Series / IoT Database</td><td>2.27.2</td><td>2026-06-02</td>
-<td>5</td><td>5</td><td>5</td><td class="comb">15</td>
-<td>C</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/timescale/timescaledb" target="_blank">link</a></td></tr><tr>
-<td>libmodbus</td><td>RS-485 / Modbus</td><td>3.x</td><td>2026</td>
-<td>5</td><td>5</td><td>5</td><td class="comb">15</td>
-<td>C</td><td>LGPL-2.1</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://libmodbus.org/" target="_blank">link</a></td></tr><tr>
-<td>Arduino-ESP32</td><td>Embedded Firmware</td><td>3.3.8</td><td>2026-04-12</td>
-<td>5</td><td>5</td><td>4</td><td class="comb">14</td>
-<td>C++</td><td>LGPL-2.1</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/espressif/arduino-esp32" target="_blank">link</a></td></tr><tr>
-<td>Mender</td><td>RPi / edge fleet management</td><td>current</td><td>2026</td>
-<td>4</td><td>5</td><td>5</td><td class="comb">14</td>
-<td>Go</td><td>Apache-2.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/mendersoftware/mender" target="_blank">link</a></td></tr><tr>
-<td>RadioLib</td><td>LoRa / LoRaWAN</td><td>7.7.1</td><td>2026-05-31</td>
-<td>4</td><td>5</td><td>5</td><td class="comb">14</td>
-<td>C++</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/jgromes/RadioLib" target="_blank">link</a></td></tr><tr>
-<td>mochi-mqtt (server)</td><td>Go backend</td><td>v2</td><td>2026</td>
-<td>5</td><td>4</td><td>5</td><td class="comb">14</td>
-<td>Go</td><td>MIT</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/mochi-mqtt/server" target="_blank">link</a></td></tr><tr>
-<td>pymodbus</td><td>RS-485 / Modbus</td><td>3.13.0</td><td>2026-04-12</td>
-<td>4</td><td>5</td><td>5</td><td class="comb">14</td>
-<td>Python</td><td>BSD-3-Clause</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/pymodbus-dev/pymodbus" target="_blank">link</a></td></tr><tr>
-<td>react-native-ble-plx</td><td>React Native</td><td>3.5.1</td><td>2026-02-18</td>
-<td>4</td><td>5</td><td>5</td><td class="comb">14</td>
-<td>TypeScript</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/dotintent/react-native-ble-plx" target="_blank">link</a></td></tr><tr>
-<td>Aider</td><td>Agentic dev tooling</td><td>current</td><td>2026</td>
-<td>5</td><td>4</td><td>4</td><td class="comb">13</td>
-<td>Python</td><td>Apache-2.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/Aider-AI/aider" target="_blank">link</a></td></tr><tr>
-<td>ChirpStack</td><td>LoRa / LoRaWAN</td><td>4.18.0</td><td>2026-05-11</td>
-<td>3</td><td>5</td><td>5</td><td class="comb">13</td>
-<td>Rust</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/chirpstack/chirpstack" target="_blank">link</a></td></tr><tr>
-<td>ESP-IDF</td><td>Embedded Firmware</td><td>6.0.1</td><td>2026-04-27</td>
-<td>3</td><td>5</td><td>5</td><td class="comb">13</td>
-<td>C</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/espressif/esp-idf" target="_blank">link</a></td></tr><tr>
-<td>Edge Impulse (EON Compiler)</td><td>Edge AI / TinyML</td><td>current</td><td>2026</td>
-<td>5</td><td>4</td><td>4</td><td class="comb">13</td>
-<td>Multi</td><td>Proprietary (free tier)</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://edgeimpulse.com/" target="_blank">link</a></td></tr><tr>
-<td>ShellHub</td><td>Edge Fleet Management</td><td>0.24.2</td><td>2026-04-29</td>
-<td>4</td><td>4</td><td>5</td><td class="comb">13</td>
-<td>Go</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/shellhub-io/shellhub" target="_blank">link</a></td></tr><tr>
-<td>Victory Native (XL)</td><td>React Native</td><td>41.22.0</td><td>2026-06-01</td>
-<td>4</td><td>4</td><td>5</td><td class="comb">13</td>
-<td>TypeScript</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/FormidableLabs/victory-native-xl" target="_blank">link</a></td></tr><tr>
-<td>balena / openBalena</td><td>RPi / edge fleet management</td><td>current</td><td>2026</td>
-<td>4</td><td>5</td><td>4</td><td class="comb">13</td>
-<td>TypeScript</td><td>AGPL-3.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/balena-io/open-balena" target="_blank">link</a></td></tr><tr>
-<td>Agno</td><td>Agentic Dev Tooling</td><td>2.6.11</td><td>2026-06-02</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>Python</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/agno-agi/agno" target="_blank">link</a></td></tr><tr>
-<td>EMQX</td><td>MQTT</td><td>6.2.0</td><td>2026-04-08</td>
-<td>3</td><td>5</td><td>4</td><td class="comb">12</td>
-<td>Erlang</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/emqx/emqx" target="_blank">link</a></td></tr><tr>
-<td>ESPHome</td><td>Embedded firmware</td><td>2026.4.0</td><td>2026-04</td>
-<td>5</td><td>5</td><td>2</td><td class="comb">12</td>
-<td>C++/Python</td><td>MIT/GPL</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://esphome.io/changelog/" target="_blank">link</a></td></tr><tr>
-<td>Hard Potato</td><td>Electrochemical sensing</td><td>current</td><td>2025</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>Python</td><td>OSS</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://pubs.acs.org/doi/10.1021/acs.analchem.2c04862" target="_blank">link</a></td></tr><tr>
-<td>NanoMQ</td><td>MQTT</td><td>0.24.14</td><td>2026-05-29</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>C</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/nanomq/nanomq" target="_blank">link</a></td></tr><tr>
-<td>QuestDB</td><td>Time-Series / IoT Database</td><td>9.3.5</td><td>2026-04-13</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>Java</td><td>Apache-2.0</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/questdb/questdb" target="_blank">link</a></td></tr><tr>
-<td>TensorFlow Lite for Microcontrollers</td><td>Edge AI / TinyML</td><td>current</td><td>2026</td>
-<td>3</td><td>5</td><td>4</td><td class="comb">12</td>
-<td>C++</td><td>Apache-2.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/tensorflow/tflite-micro" target="_blank">link</a></td></tr><tr>
-<td>mbusd</td><td>RS-485 / Modbus</td><td>current</td><td>2026</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>C</td><td>GPL-3.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/3cky/mbusd" target="_blank">link</a></td></tr><tr>
-<td>pybaselines</td><td>Electrochemical Sensing</td><td>1.2.1</td><td>2025-08-10</td>
-<td>4</td><td>4</td><td>4</td><td class="comb">12</td>
-<td>Python</td><td>BSD-3-Clause</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/derb12/pybaselines" target="_blank">link</a></td></tr><tr>
-<td>HailoRT</td><td>Edge AI / TinyML</td><td>5.3.0</td><td>2026-05-01</td>
-<td>3</td><td>4</td><td>4</td><td class="comb">11</td>
-<td>C++</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/hailo-ai/hailort" target="_blank">link</a></td></tr><tr>
-<td>OpenHands</td><td>Agentic Dev Tooling</td><td>1.7.0</td><td>2026-05-01</td>
-<td>3</td><td>4</td><td>4</td><td class="comb">11</td>
-<td>Python</td><td>MIT</td><td>2026-06-02</td><td>2026-06-02</td>
-<td><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">link</a></td></tr><tr>
-<td>RedoxPySolid</td><td>Electrochemical sensing</td><td>current</td><td>2025</td>
-<td>3</td><td>3</td><td>5</td><td class="comb">11</td>
-<td>Python</td><td>OSS</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/topics/voltammetry" target="_blank">link</a></td></tr><tr>
-<td>react-native-ble-manager</td><td>React Native</td><td>12.4.5</td><td>2026-02</td>
-<td>4</td><td>4</td><td>3</td><td class="comb">11</td>
-<td>TypeScript</td><td>Apache-2.0</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/innoveit/react-native-ble-manager" target="_blank">link</a></td></tr><tr>
-<td>LangGraph</td><td>Agentic dev tooling</td><td>current</td><td>2026</td>
-<td>3</td><td>4</td><td>3</td><td class="comb">10</td>
-<td>Python</td><td>MIT</td><td>2026-06-03</td><td>2026-06-03</td>
-<td><a href="https://github.com/langchain-ai/langgraph" target="_blank">link</a></td></tr></tbody></table>
-<footer>Endo Automation &middot; Tech Radar master index &middot; generated 2026-06-02</footer>
+.card a.name{font-size:1.15rem;font-weight:700;color:var(--accent);text-decoration:none;}
+.card a.name:hover{text-decoration:underline;}
+.type{color:var(--secondary);font-size:.82rem;font-style:italic;}
+.badges{margin:10px 0;}
+.badge{display:inline-block;color:#fff;font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:12px;margin-right:6px;}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle;}
+.tag.NEW{background:var(--highlight);color:#fff;}
+.tag.UPDATE{background:var(--secondary);color:#fff;}
+.card p{margin:8px 0;font-size:.92rem;line-height:1.5;}
+.label{font-weight:700;color:var(--accent);}
+.take{background:#eef5f3;border-radius:6px;padding:8px 12px;font-size:.9rem;}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.1);font-size:.88rem;}
+th{background:var(--accent);color:#fff;text-align:left;padding:9px 10px;}
+td{padding:8px 10px;border-top:1px solid #eee;}
+tr:nth-child(even) td{background:#fafbfc;}
+td a{color:var(--secondary);}
+.cap{font-weight:700;}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;cursor:pointer;margin:20px 0;}
+.btn:hover{background:var(--secondary);}
+.scorecell{font-weight:700;text-align:center;}
+.footer{color:var(--secondary);font-size:.8rem;margin-top:40px;text-align:center;}
+@media print{.btn{display:none;}body{background:#fff;}.card,.note,table{box-shadow:none;}}
+</style></head><body><div class="wrap">
+<h1>Endo Tech Radar — Master Index</h1>
+<p class="sub">Every tracked company, product, platform &amp; deal — sorted by Combined score. Updated June 04, 2026.</p>
+<button class="btn" onclick="window.print()">Save as PDF</button>
+<table><thead><tr><th>Name</th><th>Theme</th><th>Funding</th><th>Cap</th><th>Ease</th><th>Mom</th><th>Combined</th><th>First seen</th></tr></thead><tbody><tr><td><a href="https://blues.com/" target="_blank">Blues (Notecard / Notehub)</a></td><td>IoT device &amp; fleet platforms</td><td>$25M round led by Sequoia Capital, announced May 20, 2025; substantial prior ven…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">14</td><td>2026-06-04</td></tr><tr><td><a href="https://memfault.com/" target="_blank">Memfault (acquired by Nordic Semiconductor)</a></td><td>IoT device &amp; fleet platforms</td><td>~$35M raised over 3 rounds ($8.5M Series A, $24M Series B) before being acquired…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">14</td><td>2026-06-04</td></tr><tr><td><a href="https://deepx.ai/" target="_blank">DEEPX</a></td><td>Edge AI</td><td>$80.5M Series C at a $529M valuation (May 2024) led by SkyLake; cumulative priva…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">14</td><td>2026-06-04</td></tr><tr><td><a href="https://www.varaha.earth/" target="_blank">Varaha</a></td><td>Soil carbon / MRV</td><td>$20M first tranche of a targeted $45M Series B, led by WestBridge Capital (annou…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">13</td><td>2026-06-04</td></tr><tr><td><a href="https://sima.ai/" target="_blank">SiMa.ai</a></td><td>Edge AI</td><td>$85M round Aug 2025 led by Maverick Capital with new investor StepStone, bringin…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">13</td><td>2026-06-04</td></tr><tr><td><a href="https://sateliot.space/" target="_blank">Sateliot</a></td><td>LoRa / connectivity</td><td>Total ~$77.7M historically; closed EUR70M Series B (March 2025) and launched a E…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">13</td><td>2026-06-04</td></tr><tr><td><a href="https://onomondo.com/" target="_blank">Onomondo</a></td><td>LoRa / connectivity</td><td>~$31.5M total over 9 rounds; largest disclosed is a $21M Series A (June 2022) le…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">13</td><td>2026-06-04</td></tr><tr><td><a href="https://cropx.com/" target="_blank">CropX Technologies</a></td><td>Soil &amp; agri sensing</td><td>~$90.8M total raised across ~10 rounds from ~45-47 investors. Latest disclosed e…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">12</td><td>2026-06-04</td></tr><tr><td><a href="https://boomitra.com/" target="_blank">Boomitra</a></td><td>Soil carbon / MRV</td><td>~$11M total raised (incl. ~$4M 2021 round led by Yara; Global Innovation Fund eq…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">12</td><td>2026-06-04</td></tr><tr><td><a href="https://www.useyardstick.com/" target="_blank">Yard Stick PBC</a></td><td>Electrochemical / soil sensors</td><td>$10.6M Series A (2023, led by Toyota Ventures Climate Fund) plus a new $18M roun…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="cap" style="text-align:center">12</td><td>2026-06-04</td></tr><tr><td><a href="https://agfundernews.com/terrablaster-aims-for-late-2026-launch-with-real-time-npk-soil-mapping-at-tractor-speed" target="_blank">TerraBlaster</a></td><td>Electrochemical / soil sensors</td><td>~$7M total disclosed: a $3M seed (as &#x27;SoilCode&#x27; pre-rebrand) plus an oversubscri…</td><td class="scorecell" style="color:#2a9d8f">5</td><td class="scorecell" style="color:#adb5bd">2</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">11</td><td>2026-06-04</td></tr><tr><td><a href="https://fasal.co" target="_blank">Fasal</a></td><td>Precision-ag peers</td><td>~$19.4M total raised. Latest: ~INR 100 Cr (~$12M) Series A co-led by TDK Venture…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">11</td><td>2026-06-04</td></tr><tr><td><a href="https://digitalpaani.com" target="_blank">DigitalPaani</a></td><td>Precision-ag peers</td><td>~$1.2M seed (led by Enzia Ventures), reported recent/2025-2026.</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#e9c46a">3</td><td class="cap" style="text-align:center">10</td><td>2026-06-04</td></tr><tr><td><a href="https://igrownews.com/miraterra-latest-news/" target="_blank">Miraterra acquires Trace Genomics + $16M raise</a></td><td>Funding &amp; M&amp;A</td><td>~$16M CAD round (exceeded ~$13.9M target), led by At One Ventures, ~early 2026. …</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#adb5bd">2</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="cap" style="text-align:center">10</td><td>2026-06-04</td></tr><tr><td><a href="https://www.stenon.io/" target="_blank">Stenon (FarmLab)</a></td><td>Soil &amp; agri sensing</td><td>~$21.2M total: $20M Series A (Dec 2021, Founders Fund / The Production Board) + …</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#e9c46a">3</td><td class="scorecell" style="color:#adb5bd">2</td><td class="cap" style="text-align:center">9</td><td>2026-06-04</td></tr><tr><td><a href="https://cropx.com/2025/09/02/cropx-acquires-acclym-pr/" target="_blank">CropX acquires Acclym (formerly Agritask)</a></td><td>Funding &amp; M&amp;A</td><td>Deal value undisclosed; announced 2 Sept 2025. Acclym brings ~$42M of prior vent…</td><td class="scorecell" style="color:#2a9d8f">4</td><td class="scorecell" style="color:#adb5bd">2</td><td class="scorecell" style="color:#e9c46a">3</td><td class="cap" style="text-align:center">9</td><td>2026-06-04</td></tr></tbody></table>
+<div class="footer">16 items tracked. Endo Founder Tech Radar master index — generated June 04, 2026.</div>
 </div></body></html>
