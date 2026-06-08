@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC Measurement Brief — June 08, 2026</title>
+<style>
+  :root{
+    --bg:#f8f9fa; --card:#ffffff; --accent:#2d6a4f; --secondary:#52b788;
+    --text:#1b1b1b; --grey:#9aa5a1; --muted:#5a6660;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin:0; padding:0; line-height:1.55;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:32px 20px 80px;}
+  header.masthead{
+    border-bottom:3px solid var(--accent); padding-bottom:18px; margin-bottom:8px;
+  }
+  header.masthead h1{
+    font-size:1.9rem; margin:0 0 4px; color:var(--accent); letter-spacing:-.5px;
+  }
+  header.masthead .sub{color:var(--muted); font-size:.95rem;}
+  .kicker{
+    text-transform:uppercase; letter-spacing:2px; font-size:.72rem;
+    color:var(--secondary); font-weight:700; margin-bottom:6px;
+  }
+  section{margin-top:34px;}
+  h2.section-title{
+    font-size:1.3rem; color:var(--accent); border-left:5px solid var(--secondary);
+    padding-left:12px; margin-bottom:14px;
+  }
+  h3.sub-title{
+    font-size:1.05rem; color:var(--text); margin:26px 0 12px;
+    border-bottom:1px dashed var(--grey); padding-bottom:6px;
+  }
+  .note, .actions, .debate, .outlook{
+    background:var(--card); border-radius:12px; padding:20px 22px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  .note{border-top:4px solid var(--accent);}
+  .actions{border-top:4px solid var(--secondary);}
+  .actions ul{margin:0; padding-left:0; list-style:none;}
+  .actions li{
+    margin-bottom:16px; padding-left:18px; position:relative;
+  }
+  .actions li:last-child{margin-bottom:0;}
+  .actions li:before{
+    content:"▸"; color:var(--accent); position:absolute; left:0; top:0; font-weight:700;
+  }
+  .actions li b{color:var(--accent);}
+  .card{
+    background:var(--card); border-radius:12px; padding:18px 20px; margin-bottom:18px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06); position:relative;
+  }
+  .card .top{display:flex; align-items:flex-start; gap:14px;}
+  .badge{
+    flex:0 0 auto; width:42px; height:42px; border-radius:50%;
+    color:#fff; font-weight:700; font-size:1.15rem;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 4px rgba(0,0,0,.18);
+  }
+  .b5,.b4{background:var(--accent);}
+  .b3{background:var(--secondary);}
+  .b2,.b1{background:var(--grey);}
+  .card h4{margin:0 0 4px; font-size:1.05rem; line-height:1.35;}
+  .card h4 a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--secondary);}
+  .card h4 a:hover{color:var(--accent);}
+  .meta{font-size:.82rem; color:var(--muted); margin-bottom:8px;}
+  .synth{font-size:.94rem; margin:8px 0;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px;}
+  .tag{
+    background:#e7f1ec; color:var(--accent); font-size:.72rem; font-weight:600;
+    padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .just{font-style:italic; color:var(--muted); font-size:.82rem;}
+  .debate p{margin:0 0 12px;}
+  .debate p:last-child{margin-bottom:0;}
+  .outlook ul{margin:0; padding-left:20px;}
+  .outlook li{margin-bottom:10px;}
+  table{
+    width:100%; border-collapse:collapse; background:var(--card);
+    border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06);
+    font-size:.88rem;
+  }
+  th{background:var(--accent); color:#fff; text-align:left; padding:10px 12px; font-size:.8rem; text-transform:uppercase; letter-spacing:.5px;}
+  td{padding:10px 12px; border-bottom:1px solid #eef1ef; vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  .sc{font-weight:700; text-align:center; width:48px;}
+  .sc5,.sc4{color:var(--accent);}
+  .sc3{color:var(--secondary);}
+  .sc2,.sc1{color:var(--grey);}
+  .printbtn{
+    position:fixed; bottom:24px; right:24px; background:var(--accent); color:#fff;
+    border:none; padding:12px 20px; border-radius:30px; font-size:.9rem; font-weight:600;
+    cursor:pointer; box-shadow:0 4px 14px rgba(45,106,79,.4); z-index:50;
+  }
+  .printbtn:hover{background:#235640;}
+  footer{margin-top:40px; font-size:.78rem; color:var(--muted); text-align:center;}
+  @media print{
+    .printbtn{display:none;} body{background:#fff;}
+    .card,.note,.actions,.debate,.outlook,table{box-shadow:none; border:1px solid #ddd;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">SOC Daily Research Brief</div>
+    <h1>Soil Carbon Measurement Brief</h1>
+    <div class="sub">June 08, 2026 &nbsp;·&nbsp; Founder lens: low-cost electrochemical SOC sensing for Indian smallholder farms &nbsp;·&nbsp; 9 papers across 3 methods</div>
+  </header>
+
+  <!-- 1. EDITOR'S NOTE -->
+  <section>
+    <h2 class="section-title">Editor's Note</h2>
+    <div class="note">
+      Today's most actionable finding is the Dhamu et&nbsp;al. (2024) <em>Sensors</em> demonstration that a three-electrode square-wave-voltammetry cell — using soil itself as a solid-phase electrolyte — can quantify SOC in situ, the closest published blueprint to the device you are building. Pair it with the 2025 follow-on showing that low-cost SWV can be calibrated against cheap, off-the-shelf fulvic/humic-acid standards, and you have both an architecture and a calibration path that sidestep the lab entirely. The spectroscopic and classical papers below matter mostly as ground-truth and chemometric scaffolding around that electrochemical core.
+    </div>
+  </section>
+
+  <!-- 2. WHAT I'D ACT ON THIS WEEK -->
+  <section>
+    <h2 class="section-title">What I'd Act On This Week</h2>
+    <div class="actions">
+      <ul>
+        <li><b>Prototype the three-electrode SWV cell.</b> Build a gold working / carbon counter / Ag·AgCl reference stack with an ionic coating, treating moist soil as the solid-phase electrolyte, exactly as in <a href="https://www.mdpi.com/1424-8220/24/4/1153">Dhamu et&nbsp;al. (2024)</a>. <span class="just">Why it matters: this is a field-validated electrode geometry — starting here de-risks your first Indian-soil bench trials.</span></li>
+        <li><b>Calibrate against cheap humic/fulvic-acid standards.</b> Use commercial fulvic/humic acid as a soluble-carbon proxy to build an SWV calibration curve, per the <a href="https://www.sciencedirect.com/science/article/pii/S2214180425001229">2025 low-cost SWV study</a>. <span class="just">Why it matters: removes dependence on a combustion analyzer — a calibration kit that costs rupees, not lakhs, fits smallholder economics.</span></li>
+        <li><b>Trial biochar electrodes from local agri-waste.</b> Fabricate carbon-paste / screen-printed electrodes from biomass-derived biochar following the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10538108/">biomass-electrode review (2023)</a>. <span class="just">Why it matters: rice-husk and crop-residue biochar is abundant and free across India — a direct route to slashing electrode BOM.</span></li>
+        <li><b>Set up a Walkley-Black ground-truth loop with PLS modelling.</b> Borrow the calibration-model comparison from the <a href="https://www.si-ware.com/featured-resources/low-cost-portable-nir-spectrometer-for-predicting-soil-organic-and-carbon">low-cost portable-NIR study</a> and validate sensor output against inexpensive wet-oxidation references (<a href="https://www.researchgate.net/publication/260436202_Comparison_limitations_and_uncertainty_of_wet_chemistry_techniques_loss_on_ignition_and_dry_combustion_in_soil_organic_carbon_analysis">Wuddivira/uncertainty comparison</a>). <span class="just">Why it matters: cheap, locally-runnable ground truth lets you tune the sensor on real Indian soil series before scaling.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. PAPERS BY METHOD -->
+  <section>
+    <h2 class="section-title">Papers by Method</h2>
+
+    <h3 class="sub-title">Bucket 1 — Electrochemical</h3>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b5">5</div>
+        <div>
+          <h4><a href="https://www.mdpi.com/1424-8220/24/4/1153">Characterization of an In-Situ Soil Organic Carbon (SOC) via a Smart-Electrochemical Sensing Approach</a></h4>
+          <div class="meta">Dhamu, V. et&nbsp;al. · 2024 · <em>Sensors</em> 24(4):1153 · DOI:10.3390/s24041153</div>
+          <p class="synth">Demonstrates a field-deployment-capable SOC sensor that uses pulsed Square Wave Voltammetry (SWV) with a three-electrode configuration — gold working, carbon counter and Ag/AgCl reference electrodes plus an ionic coating — while treating soil as a solid-phase electrolyte. Applying an input bias breaks down the soil matrix and liberates carbon, producing a measurable charge modulation at the electrode interface. The platform is positioned as a complementary, real-time alternative to laboratory SOC protocols.</p>
+          <div class="tags"><span class="tag">SWV</span><span class="tag">3-electrode</span><span class="tag">in-situ</span></div>
+          <div class="just">Score 5 — directly the device architecture for in-situ electrochemical SOC.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b5">5</div>
+        <div>
+          <h4><a href="https://www.sciencedirect.com/science/article/pii/S2214180425001229">Toward the development of a square wave voltammetry technique for in situ soil organic carbon quantification</a></h4>
+          <div class="meta">2025 · <em>Sensing and Bio-Sensing Research</em> (Elsevier) · article S2214180425001229</div>
+          <p class="synth">Investigates the feasibility of a low-cost electrochemical technique for quantifying soluble soil carbon species directly in soil. The authors use commercially available fulvic and humic acid as model analytes to establish an SWV-based calibration pathway, explicitly targeting affordable in-field sensor development. The work extends the in-situ SWV concept toward a manufacturable, cost-constrained instrument.</p>
+          <div class="tags"><span class="tag">SWV</span><span class="tag">low-cost</span><span class="tag">humic/fulvic calibration</span></div>
+          <div class="just">Score 5 — low-cost SWV calibration route using cheap standards.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b4">4</div>
+        <div>
+          <h4><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10538108/">Biomass-Derived Carbon-Based Electrodes for Electrochemical Sensing: A Review</a></h4>
+          <div class="meta">2023 · <em>Biosensors / PMC10538108</em> · review</div>
+          <p class="synth">Reviews how biochar and other biomass-derived carbons can be turned into low-cost, high-performance electrodes for electrochemical sensing, often from waste biomass feedstocks. Carbon-paste and screen-printed formats deliver competitive sensitivity at a fraction of the cost of noble-metal electrodes. The review maps fabrication routes and surface chemistries relevant to building cheap, sensitive electroanalytical devices.</p>
+          <div class="tags"><span class="tag">biochar electrodes</span><span class="tag">materials</span><span class="tag">cost reduction</span></div>
+          <div class="just">Score 4 — electrode-material insight that directly cuts sensor cost.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Bucket 2 — Spectroscopic</h3>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b4">4</div>
+        <div>
+          <h4><a href="https://www.sciencedirect.com/science/article/pii/S0016706124003811">Measuring in situ soil carbon stocks: A study using a novel handheld VisNIR probe</a></h4>
+          <div class="meta">2024 · <em>Geoderma</em> · article S0016706124003811</div>
+          <p class="synth">Tests a handheld VisNIR probe for rapid, in-situ estimation of soil carbon stocks without sample removal. The work shows easy-to-operate, rapidly deployed handheld devices can approximate lab measurements when calibration is handled carefully. It surfaces the practical field-deployment trade-offs — moisture, contact, depth — that any in-field SOC tool must manage.</p>
+          <div class="tags"><span class="tag">VisNIR</span><span class="tag">handheld</span><span class="tag">in-situ</span></div>
+          <div class="just">Score 4 — transferable in-field deployment and calibration lessons.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b4">4</div>
+        <div>
+          <h4><a href="https://www.si-ware.com/featured-resources/low-cost-portable-nir-spectrometer-for-predicting-soil-organic-and-carbon">Evaluating a low-cost portable NIR spectrometer for the prediction of soil organic and total carbon using different calibration models</a></h4>
+          <div class="meta">2020 · <em>Soil &amp; Tillage / NeoSpectra technical report</em></div>
+          <p class="synth">Benchmarks a sub-$1k handheld NIR spectrometer (NeoSpectra-class) against multiple calibration models — PLS and machine-learning regressions — for predicting soil organic and total carbon. Performance is workable when the calibration model is matched to the sensor's spectral resolution and the local soil population. The study frames how far cheap optical hardware plus good chemometrics can be pushed.</p>
+          <div class="tags"><span class="tag">low-cost NIR</span><span class="tag">PLS/ML calibration</span><span class="tag">chemometrics</span></div>
+          <div class="just">Score 4 — calibration-model strategy transferable to a low-cost sensor.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b3">3</div>
+        <div>
+          <h4><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169924001510">Improving the estimation accuracy of soil organic matter based on the fusion of near-infrared and Raman spectroscopy using outer-product analysis</a></h4>
+          <div class="meta">2024 · <em>Computers and Electronics in Agriculture</em> · article S0168169924001510</div>
+          <p class="synth">Fuses NIR and Raman spectra via outer-product analysis, exploiting complementary chemistry — Raman captures symmetric C=C/aromatic bonds while NIR responds to O–H, C–N, C–O — to raise SOM prediction accuracy. The fusion and feature-selection approach is a general chemometric lesson rather than a single-sensor result. It hints at how multi-signal fusion could sharpen any low-resolution SOC estimate.</p>
+          <div class="tags"><span class="tag">NIR+Raman fusion</span><span class="tag">outer-product</span><span class="tag">chemometrics</span></div>
+          <div class="just">Score 3 — transferable data-fusion technique, not electrochemistry.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Bucket 3 — Classical</h3>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b3">3</div>
+        <div>
+          <h4><a href="https://www.researchgate.net/publication/260436202_Comparison_limitations_and_uncertainty_of_wet_chemistry_techniques_loss_on_ignition_and_dry_combustion_in_soil_organic_carbon_analysis">Comparison, limitations and uncertainty of wet chemistry techniques, loss on ignition and dry combustion in soil organic carbon analysis</a></h4>
+          <div class="meta">2014 · <em>Communications in Soil Science &amp; Plant Analysis</em></div>
+          <p class="synth">Systematically compares Walkley-Black wet oxidation, loss-on-ignition and dry combustion, quantifying the systematic biases and uncertainty each carries. Wet oxidation captures only readily-oxidisable carbon, LOI estimates total organic matter, and dry combustion measures carbon directly — so cross-method conversion factors are unavoidable. Essential context for choosing a defensible, affordable reference method.</p>
+          <div class="tags"><span class="tag">reference methods</span><span class="tag">uncertainty</span><span class="tag">Walkley-Black</span></div>
+          <div class="just">Score 3 — informs which cheap reference to ground-truth against.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b2">2</div>
+        <div>
+          <h4><a href="https://www.academia.edu/23324719/Soil_Organic_Carbon_Relating_the_Walkley_Black_Wet_Oxidation_Method_to_Loss_on_Ignition_and_Clay_Content">Soil Organic Carbon: Relating the Walkley-Black Wet Oxidation Method to Loss on Ignition and Clay Content</a></h4>
+          <div class="meta">2016 · <em>Communications in Soil Science &amp; Plant Analysis</em></div>
+          <p class="synth">Develops empirical relationships linking the cheap Walkley-Black method to LOI while accounting for clay content, which confounds LOI through structural-water loss. Useful for understanding how soil texture skews low-cost reference assays. Relevant background for clay-rich Indian Vertisols where reference choice affects calibration.</p>
+          <div class="tags"><span class="tag">Walkley-Black</span><span class="tag">LOI</span><span class="tag">clay correction</span></div>
+          <div class="just">Score 2 — tangential, but flags clay interference on cheap references.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <div class="badge b2">2</div>
+        <div>
+          <h4><a href="https://www.researchgate.net/publication/328455527_Quantification_of_Soil_Organic_Carbon_-_Comparison_of_Wet_Oxidation_and_Dry_Combustion_Methods">Quantification of Soil Organic Carbon — Comparison of Wet Oxidation and Dry Combustion Methods</a></h4>
+          <div class="meta">2018 · <em>journal report (ResearchGate 328455527)</em></div>
+          <p class="synth">Directly compares wet-oxidation and dry-combustion SOC values across a sample set, confirming dry combustion as the more complete (and more expensive) measure while wet oxidation under-reads. Reinforces the recovery-factor problem when substituting a cheap method for a gold-standard one. Background for setting calibration tolerances.</p>
+          <div class="tags"><span class="tag">wet oxidation</span><span class="tag">dry combustion</span><span class="tag">method bias</span></div>
+          <div class="just">Score 2 — context on reference-method recovery factors.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 4. SCIENTISTS' DEBATE -->
+  <section>
+    <h2 class="section-title">Scientists' Debate</h2>
+    <div class="debate">
+      <p>The sharpest tension running through today's papers is <strong>what "soil carbon" a measurement actually counts — and therefore what a cheap sensor can honestly claim.</strong> The electrochemical work (Dhamu 2024; the 2025 SWV study) liberates and detects carbon released electrochemically from the soil matrix, with the follow-on deliberately calibrating against <em>soluble</em> humic and fulvic fractions. The classical literature, meanwhile, is built on the uncomfortable fact that Walkley-Black sees only readily-oxidisable carbon, LOI sees total organic matter (plus structural water in clays), and dry combustion sees total carbon. These are not the same quantity, and the conversion factors between them are soil-specific.</p>
+      <p>This is the crux for a founder: an electrochemical sensor tuned to soluble/oxidisable carbon may correlate beautifully with Walkley-Black yet diverge from the dry-combustion total that carbon-credit registries increasingly demand. The spectroscopic camp sidesteps the chemistry entirely — VisNIR and Raman predict a statistical projection onto whatever reference the calibration set used, which simply relocates the problem into the choice of training labels. The NIR+Raman fusion paper's whole premise is that no single signal captures the full molecular picture, an implicit warning that single-modality cheap sensors will always carry a representation gap.</p>
+      <p>The reconciling view is that none of these methods is "ground truth" in isolation; each is a defensible proxy once its bias is characterised. For the founder the debate resolves into a design decision rather than a dead end: pick one reference (likely dry combustion for credit-grade defensibility, Walkley-Black for cheap iteration), document the recovery factor explicitly, and treat the electrochemical reading as a calibrated estimator of that specific reference — not as a context-free "carbon" number.</p>
+    </div>
+  </section>
+
+  <!-- 5. FIELD OUTLOOK -->
+  <section>
+    <h2 class="section-title">Field Outlook — Indian Smallholder Deployment</h2>
+    <div class="outlook">
+      <ul>
+        <li><strong>Moisture and contact will dominate field error.</strong> Both the handheld VisNIR and the in-situ SWV work flag soil moisture and electrode/probe contact as primary noise sources — a humidity-tolerant sampling protocol matters more than incremental electrode chemistry for monsoon-cycle Indian fields.</li>
+        <li><strong>Clay-rich Vertisols need their own calibration.</strong> The Walkley-Black/LOI/clay paper shows texture distorts cheap references; black-cotton soils across central India will likely require region-specific calibration sets rather than a single national curve.</li>
+        <li><strong>Local biochar electrodes align cost with supply.</strong> Rice-husk and crop-residue feedstock for biomass-derived electrodes is abundant and near-free in Indian agriculture, making the cost-reduction path in the electrode review unusually practical here.</li>
+        <li><strong>Decide your reference early for credit-readiness.</strong> If the end goal is carbon-credit verification, anchor calibration to dry combustion and document the recovery factor now — retrofitting a defensible reference later is far costlier than choosing it up front.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. QUICK REFERENCE TABLE -->
+  <section>
+    <h2 class="section-title">Quick Reference Table</h2>
+    <table>
+      <thead>
+        <tr><th class="sc">Score</th><th>Title</th><th>Method</th><th>Key Finding</th><th>Year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="sc sc5">5</td><td>Characterization of an In-Situ SOC via a Smart-Electrochemical Sensing Approach</td><td>Electrochemical</td><td>3-electrode SWV with soil as solid electrolyte quantifies SOC in situ</td><td>2024</td></tr>
+        <tr><td class="sc sc5">5</td><td>Toward a square wave voltammetry technique for in situ SOC quantification</td><td>Electrochemical</td><td>Low-cost SWV calibrated on cheap fulvic/humic-acid standards</td><td>2025</td></tr>
+        <tr><td class="sc sc4">4</td><td>Biomass-Derived Carbon-Based Electrodes for Electrochemical Sensing</td><td>Electrochemical</td><td>Waste-biochar electrodes give high sensitivity at low cost</td><td>2023</td></tr>
+        <tr><td class="sc sc4">4</td><td>Measuring in situ soil carbon stocks using a novel handheld VisNIR probe</td><td>Spectroscopic</td><td>Handheld VisNIR approximates lab SOC with careful calibration</td><td>2024</td></tr>
+        <tr><td class="sc sc4">4</td><td>Evaluating a low-cost portable NIR spectrometer for SOC prediction</td><td>Spectroscopic</td><td>Sub-$1k NIR works when calibration model matches local soils</td><td>2020</td></tr>
+        <tr><td class="sc sc3">3</td><td>Fusion of NIR and Raman spectroscopy via outer-product analysis</td><td>Spectroscopic</td><td>Multi-signal fusion lifts SOM accuracy; no single signal is complete</td><td>2024</td></tr>
+        <tr><td class="sc sc3">3</td><td>Comparison &amp; uncertainty of wet chemistry, LOI and dry combustion</td><td>Classical</td><td>Methods measure different carbon pools; conversion factors needed</td><td>2014</td></tr>
+        <tr><td class="sc sc2">2</td><td>Relating Walkley-Black wet oxidation to LOI and clay content</td><td>Classical</td><td>Clay confounds LOI; texture skews cheap reference assays</td><td>2016</td></tr>
+        <tr><td class="sc sc2">2</td><td>Quantification of SOC — wet oxidation vs dry combustion</td><td>Classical</td><td>Wet oxidation under-reads vs dry combustion; recovery factor required</td><td>2018</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    SOC Daily Research Brief · Generated June 08, 2026 · Founder lens: low-cost electrochemical SOC sensing for Indian smallholder farms.<br>
+    Paper summaries synthesised from public abstracts and indexed metadata; verify primary sources before citation.
+  </footer>
+
+</div>
+
+<button class="printbtn" onclick="window.print()">Save as PDF</button>
+</body>
+</html>
