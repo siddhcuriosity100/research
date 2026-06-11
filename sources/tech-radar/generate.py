@@ -114,10 +114,9 @@ n_upd = len([t for t in run_items if str(t.get("status","")).upper() == "UPDATE"
 editor = (
     f"This run's most important development for Endo is <b>{e(top['name'])}</b> "
     f"(Combined {top['combined']}/15): {e(top['endo_take'])} "
-    f"Across the run, India keeps surfacing on both sides of the ledger — "
-    f"<b>Krishitantra's</b> rapid in-field soil lab as a direct low-cost peer, and "
-    f"<b>AgroStar's</b> $30M from Just Climate (its first India bet) showing global climate capital "
-    f"now chasing Indian climate-ag distribution at scale."
+    f"The run's headline money event is <b>Axelera AI's</b> $250M Series C (Feb 2026, BlackRock) — the largest "
+    f"EU AI-semiconductor round ever — confirming edge-AI silicon is now lavishly capitalized, while "
+    f"<b>Particle's</b> acquisition by Digi marks accelerating consolidation of the IoT-platform layer Endo buys from."
 )
 
 body = [f'<div class="note-box"><b>Editor\'s Note.</b> {editor}</div>']
@@ -137,23 +136,23 @@ for theme in sorted({t["theme"] for t in run_items} - set(THEME_ORDER)):
 
 body.append("<h2>Funding &amp; Market Pulse</h2>")
 pulse = (
-    "Money this run is flowing to <b>connectivity and edge intelligence for off-grid sensing</b> and to "
-    "<b>India climate-ag distribution</b>. BrainChip's $25M (Dec 2025) and the broader edge-AI surge "
-    "(average late-2025/2026 rounds ~2x larger than 2023) are pushing always-on, ultra-low-power inference "
-    "down to battery sensor nodes, while Lacuna Space and the satellite-LoRa wave are racing to blanket "
-    "farmland with no cellular. On the India side, AgroStar's $30M from Just Climate (its first India "
-    "investment) signals that global climate funds now see Indian agtech distribution as investable — even "
-    "as deep-tech soil players like Krishitantra and soil-carbon MRV startups (Seqana) stay capital-light, "
-    "underscoring that reach raises money faster than measurement hardware."
+    "Money this run is concentrating in <b>edge-AI silicon</b> and <b>IoT-platform consolidation</b>. "
+    "Axelera AI's $250M (BlackRock) and Hailo's $120M extension at a $1.2B valuation headline an edge-AI surge where "
+    "late-2025/2026 rounds now average ~$310M — more than double the 2023 norm — pushing cheap, production-grade "
+    "inference modules within Endo's reach. The fleet/connectivity layer is consolidating fast: Digi acquired Particle "
+    "(>$20M ARR), Nordic folded Memfault into nRF Cloud, Canonical took Golioth, and balena was recapitalized by LoneTree — "
+    "fewer independent vendors, more bundling. In soil-carbon, capital is shifting from equity to execution: Boomitra "
+    "added ~$35M of project finance and set a record 3.03M-credit Verra issuance, while India deep-tech (Fyllo, CropIn, "
+    "ChrysaLabs-class hardware) stays comparatively capital-light — reach and software still raise faster than measurement hardware."
 )
 body.append(f'<div class="narrative">{pulse}</div>')
 
 body.append("<h2>Build vs Buy</h2>")
 body.append("""<ul class="bv">
-<li><b>Buy / integrate the fleet-ops layer (Golioth).</b> Device management + OTA is a solved, cheap-to-start commodity now backed by Canonical/Ubuntu — Endo should buy here (Golioth, or Memfault/Blues) rather than build fleet observability in-house.</li>
-<li><b>Pilot, don't depend on, satellite connectivity (Lacuna Space).</b> Standards-based LoRa direct-to-satellite is ideal for off-grid Indian fields and works with off-the-shelf LoRa hardware — pilot it as a fallback layer alongside Sateliot, but it's partner-mediated and store-and-forward today.</li>
-<li><b>Watch edge AI by tier (BrainChip vs DEEPX).</b> For ultra-low-power always-on sensing, keep BrainChip's Akida on the radar (best perf-per-watt, niche toolchain); for standard on-device vision/anomaly AI today, DEEPX's cheap Pi-compatible NPUs remain the easier buy.</li>
-<li><b>Partner on MRV software, supply the ground truth (Seqana/Boomitra/Varaha).</b> Endo should not build satellite SOC models; instead position its cheap in-field soil sensors as the ground-truth feed that de-risks satellite-only MRV — and use AgroStar/FPO channels (Krishitantra-style) for distribution rather than building reach from scratch.</li>
+<li><b>Buy the edge-vision AI module, don't design silicon (Hailo / DEEPX).</b> Hailo's $120M raise puts production-proven, Raspberry Pi-compatible 26-TOPS modules (~$70-100) within reach — buy these (or DEEPX) for on-device vision/anomaly AI on Endo gateways. Axelera (~10W) and the tiniest always-on tier (BrainChip) stay watch-list, not core buys.</li>
+<li><b>Treat the fleet/connectivity layer as a consolidating commodity (Particle/Digi, Golioth, balena).</b> With Particle now inside Digi, Memfault inside Nordic and Golioth inside Canonical, device-management + OTA is a buy decision across a shrinking vendor set — pick one (Golioth/Memfault/Blues) and watch for post-acquisition pricing lock-in rather than building it in-house.</li>
+<li><b>Pilot satellite NB-IoT as a backstop (Skylo).</b> Skylo is the largest live standards-based direct-to-device network and is partner-accessible today (Soracom, Vodafone IoT) — a more commercially live off-grid fallback than Sateliot/Lacuna for Endo's no-cellular Indian fields; pilot, don't yet depend.</li>
+<li><b>Partner on MRV, supply the ground truth; benchmark hardware cost hard (Boomitra/Varaha vs ChrysaLabs).</b> Endo should feed cheap in-field soil data into satellite-MRV players (Boomitra's record issuance shows the market is executing), not build SOC models — while ChrysaLabs' ~$10k/yr probe rental sets the cost ceiling Endo's low-cost hardware must beat for Indian smallholders.</li>
 </ul>""")
 
 body.append("<h2>This Run — Quick Table</h2>")
