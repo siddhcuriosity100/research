@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC Daily Research Brief — June 11, 2026</title>
+<style>
+  :root{
+    --bg:#f8f9fa; --card:#ffffff; --accent:#2d6a4f; --secondary:#52b788;
+    --text:#1b1b1b; --grey:#9aa5a1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.55; font-size:16px;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:32px 20px 80px;}
+  header.masthead{
+    border-bottom:3px solid var(--accent); padding-bottom:18px; margin-bottom:26px;
+  }
+  header.masthead h1{
+    margin:0 0 4px; font-size:30px; letter-spacing:-0.4px; color:var(--accent);
+  }
+  .sub{color:#42554d; font-size:14px; margin:0;}
+  .lens{
+    background:var(--accent); color:#fff; border-radius:8px; padding:6px 12px;
+    display:inline-block; font-size:12.5px; margin-top:12px; font-weight:600;
+  }
+  h2.section{
+    font-size:21px; color:var(--accent); margin:38px 0 14px;
+    border-left:5px solid var(--secondary); padding-left:12px;
+  }
+  .note, .act, .debate, .outlook{
+    background:var(--card); border-radius:10px; padding:20px 22px;
+    box-shadow:0 2px 8px rgba(20,40,30,0.07);
+  }
+  .note{border-top:4px solid var(--accent);}
+  .act ul{margin:6px 0 0; padding-left:0; list-style:none;}
+  .act li{
+    padding:14px 0; border-bottom:1px solid #eef1ef;
+  }
+  .act li:last-child{border-bottom:none;}
+  .act li b{color:var(--accent);}
+  .act .src{font-size:13px; color:#42554d;}
+  .card{
+    background:var(--card); border-radius:10px; padding:18px 20px; margin:14px 0;
+    box-shadow:0 2px 8px rgba(20,40,30,0.07); position:relative;
+  }
+  .card h3{margin:0 0 6px; font-size:17.5px; line-height:1.35; padding-right:54px;}
+  .card h3 a{color:var(--text); text-decoration:none; border-bottom:2px solid var(--secondary);}
+  .card h3 a:hover{color:var(--accent);}
+  .meta{font-size:13px; color:#5a6b63; margin:0 0 10px;}
+  .synth{margin:8px 0 12px;}
+  .badge{
+    position:absolute; top:16px; right:18px; width:38px; height:38px;
+    border-radius:50%; color:#fff; font-weight:700; font-size:17px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 1px 4px rgba(0,0,0,0.15);
+  }
+  .b5,.b4{background:var(--accent);}
+  .b3{background:var(--secondary);}
+  .b2,.b1{background:var(--grey);}
+  .tag{
+    display:inline-block; background:#e7f1ec; color:var(--accent);
+    font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:20px; margin-right:8px;
+  }
+  .just{font-size:12.5px; color:#5a6b63; font-style:italic; margin-top:6px;}
+  table{width:100%; border-collapse:collapse; background:var(--card);
+    box-shadow:0 2px 8px rgba(20,40,30,0.07); border-radius:10px; overflow:hidden; font-size:13.5px;}
+  th{background:var(--accent); color:#fff; text-align:left; padding:10px 12px; font-size:13px;}
+  td{padding:9px 12px; border-bottom:1px solid #eef1ef; vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  .sc{font-weight:700; text-align:center; width:46px;}
+  .sc5,.sc4{color:var(--accent);} .sc3{color:var(--secondary);} .sc2,.sc1{color:var(--grey);}
+  .debate p{margin:0 0 12px;} .debate p:last-child{margin-bottom:0;}
+  .outlook ul{margin:0; padding-left:20px;} .outlook li{margin:7px 0;}
+  .pdfbtn{
+    background:var(--accent); color:#fff; border:none; border-radius:8px;
+    padding:12px 22px; font-size:15px; font-weight:600; cursor:pointer;
+    margin:30px 0 10px; box-shadow:0 2px 6px rgba(45,106,79,0.3);
+  }
+  .pdfbtn:hover{background:#245741;}
+  footer{margin-top:40px; font-size:12px; color:#7a857f; text-align:center;}
+  @media print{
+    body{background:#fff;} .pdfbtn{display:none;}
+    .card,.note,.act,.debate,.outlook,table{box-shadow:none; border:1px solid #e0e6e2;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>SOC Daily Research Brief</h1>
+    <p class="sub">Soil Organic Carbon Measurement &nbsp;·&nbsp; June 11, 2026 &nbsp;·&nbsp; 9 papers across 3 methods</p>
+    <span class="lens">Founder lens: low-cost electrochemical SOC sensors for Indian smallholder farms</span>
+  </header>
+
+  <!-- 1. EDITOR'S NOTE -->
+  <h2 class="section">Editor's Note</h2>
+  <div class="note">
+    <p style="margin:0;">Today's standout is the 2024 <em>Sensors</em> paper that fully characterizes an in-situ electrochemical SOC sensor — it hands you a near-complete buildable recipe: a three-electrode cell with an ionic-liquid/biochar coating that treats the soil itself as the electrolyte and reads carbon via square-wave voltammetry. Pair it with the polydopamine-graphene coating trick from the Frontiers organic-matter study and the printed-electronics fabrication review, and you have a concrete path from bench to a rugged, sub-lab field probe. The classical-methods papers are not your product, but they are your calibration backbone — cheap Walkley-Black titration plus a tropical-specific conversion factor is how you generate ground-truth labels in India without a combustion analyzer.</p>
+  </div>
+
+  <!-- 2. WHAT I'D ACT ON THIS WEEK -->
+  <h2 class="section">What I'd Act On This Week</h2>
+  <div class="act">
+    <ul>
+      <li>
+        <b>Build the three-electrode SWV cell and trial the ionic-liquid + biochar coating.</b>
+        Replicate the gold working / carbon-paste counter / Ag-AgCl reference stack with the BMIM-BF<sub>4</sub> + Nafion + biochar film, using square-wave voltammetry with soil as a solid-phase electrolyte.
+        <div class="src">From: <a href="https://doi.org/10.3390/s24041153" target="_blank">Smart-Electrochemical In-Situ SOC Sensing (Sensors, 2024)</a> — this is the closest published analogue to your product; it minimizes sample prep, which matters when a smallholder probe must read soil where it sits.</div>
+      </li>
+      <li>
+        <b>Test a polydopamine-modified graphene coating to lift signal and tame matrix interference.</b>
+        Encapsulating soil particles to selectively adsorb oxidizable organics gave a clean, low-cost signal in solid-state electrochemistry.
+        <div class="src">From: <a href="https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2021.699368/full" target="_blank">A New Electrochemical Detection Technique for Organic Matter (Frontiers in Chemistry, 2021)</a> — Indian soils are texturally and mineralogically heterogeneous, so a coating that isolates the organic fraction directly attacks your biggest field-noise problem.</div>
+      </li>
+      <li>
+        <b>Move the electrode from hand-built to screen-printed for cost and reproducibility.</b>
+        Printed electronics enable mass-produced, disposable, ruggedized in-soil electrodes at $-tens rather than $-hundreds per unit.
+        <div class="src">From: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11123188/" target="_blank">Underground Ink: Printed Electronics Enabling Electrochemical Sensing in Soil (2024)</a> — screen-printing is the single clearest lever for hitting a smallholder-affordable BOM and unit consistency at scale.</div>
+      </li>
+      <li>
+        <b>Stand up a local calibration loop using cheap Walkley-Black ground truth and a tropical conversion factor.</b>
+        Locally-trained regressions beat universal equations, and tropical Walkley-Black recovery averages ~1.2 (not the textbook 1.3) with wide site variability.
+        <div class="src">From: <a href="https://www.tandfonline.com/doi/abs/10.1080/00103624.2023.2217841" target="_blank">Predicting SOC from Loss-on-Ignition across Four Regions (Comm. Soil Sci. Plant Anal., 2023)</a> &amp; <a href="https://openknowledge.fao.org/server/api/core/bitstreams/e498d73e-1711-4d18-9183-aa8476387e2c/content" target="_blank">FAO GLOSOLAN Walkley-Black SOP</a> — lets you generate calibration labels in-country for a few rupees per sample and corrects the systematic bias that would otherwise wreck your sensor's accuracy on Indian soils.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. PAPERS BY METHOD -->
+  <h2 class="section">Papers by Method</h2>
+
+  <h3 style="color:#42554d; margin:22px 0 4px; font-size:16px;">⚡ Electrochemical</h3>
+
+  <div class="card">
+    <div class="badge b5">5</div>
+    <h3><a href="https://doi.org/10.3390/s24041153" target="_blank">Characterization of an In-Situ Soil Organic Carbon (SOC) via a Smart-Electrochemical Sensing Approach</a></h3>
+    <p class="meta">Authors et al. · 2024 · <em>Sensors</em>, 24(4):1153</p>
+    <p class="synth">Treats soil as a solid-phase electrolyte and applies a voltage bias to break down the matrix and separate carbon, reading SOC with pulsed square-wave voltammetry (SWV). The three-electrode design — gold working, carbon-paste counter, Ag/AgCl reference — uses an ionic coating of BMIM-BF<sub>4</sub>, a sulfonated ionomer, biochar particles, and PMMA resin. The authors position it as a viable complement to lab protocols for in-situ, real-time SOC assessment.</p>
+    <span class="tag">Square-Wave Voltammetry</span><span class="tag">3-electrode</span>
+    <div class="just">Score 5 — a near-complete, directly buildable electrochemical SOC sensor recipe.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b5">5</div>
+    <h3><a href="https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2021.699368/full" target="_blank">A New Electrochemical Detection Technique for Organic Matter Content in Ecological Soils</a></h3>
+    <p class="meta">Authors et al. · 2021 · <em>Frontiers in Chemistry</em>, 9:699368</p>
+    <p class="synth">Proposes solid-state electrochemical analysis (SSEAC) for soil organic matter, motivated by the need for rapid field detection without lab operation. Soil particles are encapsulated in polydopamine-modified graphene to adsorb oxidizable organic compounds at high efficiency before electrochemical readout. The method is highlighted as low-cost, fast, and viable on minimal sample with both organic and inorganic particles.</p>
+    <span class="tag">Solid-state EC</span><span class="tag">PDA-graphene coating</span>
+    <div class="just">Score 5 — directly actionable coating/material strategy for cheap OM electrochemistry.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b4">4</div>
+    <h3><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11123188/" target="_blank">Underground Ink: Printed Electronics Enabling Electrochemical Sensing in Soil</a></h3>
+    <p class="meta">Authors et al. · 2024 · review (PMC11123188)</p>
+    <p class="synth">Reviews how printed and screen-printed electronics make in-soil electrochemical sensors low-cost, disposable, and suited to mass production. Surveys electrode materials, ink formulations, and ruggedization needed for direct burial in soil. Frames printing as the enabling step for scaling affordable, field-deployable soil sensors.</p>
+    <span class="tag">Screen-printed electrodes</span><span class="tag">Fabrication</span>
+    <div class="just">Score 4 — strong fabrication/cost-reduction insight, not a complete SOC method.</div>
+  </div>
+
+  <h3 style="color:#42554d; margin:22px 0 4px; font-size:16px;">🔬 Spectroscopic</h3>
+
+  <div class="card">
+    <div class="badge b3">3</div>
+    <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168169924001510" target="_blank">Improving the Estimation Accuracy of Soil Organic Matter Based on the Fusion of NIR and Raman Spectroscopy Using Outer-Product Analysis</a></h3>
+    <p class="meta">Authors et al. · 2024 · <em>Computers and Electronics in Agriculture</em></p>
+    <p class="synth">Fuses NIR and Raman spectra via outer-product analysis (OPA) to improve SOM prediction, exploiting complementary chemistry — Raman responds to symmetric π bonds (aromatics) while NIR responds to asymmetric O-H, C-N, C-O bonds. The fusion outperforms single-technique models. Demonstrates that combining orthogonal signal sources sharpens organic-matter estimates.</p>
+    <span class="tag">NIR + Raman fusion</span><span class="tag">Chemometrics</span>
+    <div class="just">Score 3 — transferable data-fusion/chemometric idea, but optical hardware, not your modality.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b3">3</div>
+    <h3><a href="https://www.mdpi.com/1424-8220/22/16/6124" target="_blank">Estimation of Soil Organic Carbon Using Vis-NIR Spectral Data and Spectral Feature Bands Selection in Southern Xinjiang, China</a></h3>
+    <p class="meta">Authors et al. · 2022 · <em>Sensors</em>, 22(16):6124</p>
+    <p class="synth">Predicts SOC from Vis-NIR spectra in arid Southern Xinjiang soils using feature-band selection to trim the spectrum before regression. Shows that selecting informative wavelengths improves accuracy and model parsimony over full-spectrum models. Reinforces feasibility of rapid, non-destructive SOC estimation in low-carbon, dryland soils.</p>
+    <span class="tag">Vis-NIR</span><span class="tag">Feature selection</span>
+    <div class="just">Score 3 — feature-selection/calibration workflow transfers; arid low-C context is relevant.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b2">2</div>
+    <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12809652/" target="_blank">Calibrated Uncertainty Estimation for Soil Organic Carbon from Raman Spectra</a></h3>
+    <p class="meta">Authors et al. · 2025 · PMC12809652</p>
+    <p class="synth">Builds a framework for quantifying calibrated predictive uncertainty in SOC estimates from Shifted-Excitation Raman Difference Spectroscopy (SERDS). The emphasis is on knowing when a prediction is trustworthy, not just the point estimate. Useful conceptually for any noisy field sensor needing confidence bounds.</p>
+    <span class="tag">Raman / SERDS</span><span class="tag">Uncertainty</span>
+    <div class="just">Score 2 — uncertainty idea is transferable, but Raman hardware is too costly for smallholder use.</div>
+  </div>
+
+  <h3 style="color:#42554d; margin:22px 0 4px; font-size:16px;">🧪 Classical</h3>
+
+  <div class="card">
+    <div class="badge b4">4</div>
+    <h3><a href="https://www.tandfonline.com/doi/abs/10.1080/00103624.2023.2217841" target="_blank">Predicting Soil Organic Carbon from Loss-On-Ignition Across Four Regions of Nebraska</a></h3>
+    <p class="meta">Maxwell et al. · 2023 · <em>Communications in Soil Science and Plant Analysis</em>, 54(16)</p>
+    <p class="synth">Develops locally-trained equations relating LOI weight-loss to dry-combustion SOC across four regions, with SOC computed as total minus inorganic carbon. Finds region-specific calibrations substantially outperform a single universal equation. Underscores that the LOI→SOC relationship is geography-dependent and must be calibrated locally.</p>
+    <span class="tag">Loss-on-Ignition</span><span class="tag">Local calibration</span>
+    <div class="just">Score 4 — the "calibrate locally, don't borrow universal coefficients" lesson directly governs your India calibration.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b4">4</div>
+    <h3><a href="https://openknowledge.fao.org/server/api/core/bitstreams/e498d73e-1711-4d18-9183-aa8476387e2c/content" target="_blank">Standard Operating Procedure for Soil Organic Carbon — Walkley-Black Method</a></h3>
+    <p class="meta">FAO GLOSOLAN · 2020 · standardized SOP</p>
+    <p class="synth">A standardized titration protocol for the dichromate wet-oxidation (Walkley-Black) method, the cheapest widely-available SOC assay across Indian soil labs. Documents oxidation chemistry, recovery limitations, and the conversion factors needed to relate WB carbon to true total carbon. Tropical studies put recovery near 1.2 with wide site-to-site variability (1.09–2.27).</p>
+    <span class="tag">Walkley-Black</span><span class="tag">Ground-truth protocol</span>
+    <div class="just">Score 4 — your cheapest route to in-country calibration labels, plus the tropical bias correction you must apply.</div>
+  </div>
+
+  <div class="card">
+    <div class="badge b3">3</div>
+    <h3><a href="https://ask.ifas.ufl.edu/publication/SS721" target="_blank">Current and Emerging Protocols for Carbon Measurement in Agricultural Soils</a></h3>
+    <p class="meta">UF/IFAS EDIS (SL508/SS721) · 2022 · extension review</p>
+    <p class="synth">Surveys the measurement landscape — dry combustion as the reference, Walkley-Black wet oxidation, loss-on-ignition, and emerging sensor approaches — with their relative accuracy, cost, and use cases. Positions dry combustion as the gold standard against which cheaper methods are validated. A clean orientation to where a low-cost sensor must prove itself.</p>
+    <span class="tag">Methods review</span><span class="tag">Reference framing</span>
+    <div class="just">Score 3 — useful background that frames the accuracy bar your sensor must clear.</div>
+  </div>
+
+  <!-- 4. SCIENTISTS' DEBATE -->
+  <h2 class="section">Scientists' Debate</h2>
+  <div class="debate">
+    <p>The sharpest tension across today's papers is <strong>in-situ speed versus reference-grade accuracy</strong>. The electrochemical and spectroscopic camps are racing toward rapid, non-destructive, field-side readings, while the classical-methods literature keeps insisting that dry combustion is the only true gold standard and that even the well-loved Walkley-Black method recovers a variable, soil-dependent fraction of total carbon. Every emerging sensor in this brief is ultimately validated against a method that the same brief admits is itself imperfect — a circularity that becomes acute in tropical soils where the Walkley-Black conversion factor swings from 1.09 to 2.27.</p>
+    <p>A second, quieter disagreement is <strong>where the intelligence should live — in the chemistry or in the model</strong>. The Frontiers and Sensors electrochemical papers invest in physical selectivity: ionic-liquid films and polydopamine-graphene coatings that isolate the organic signal before it is ever digitized. The spectroscopy papers take the opposite bet, leaning on chemometrics — band selection, NIR-Raman fusion, calibrated uncertainty — to extract carbon from a noisy, convolved signal after the fact. For a founder, this is not academic: hardware selectivity raises unit cost but lowers calibration burden, while a "cheap-sensor-plus-smart-model" strategy shifts the cost into data collection and local calibration — exactly the regime the Nebraska LOI paper warns is geography-bound.</p>
+    <p>The reconciling view is that neither camp wins outright in the smallholder context. A printed electrochemical probe gets you the cost and the in-soil reading; the spectroscopy literature gives you the modeling discipline (uncertainty bounds, feature selection) to keep a cheap signal honest; and the classical methods give you the only affordable ground truth available in rural India. The interesting product is the one that borrows the hardware from camp one, the math from camp two, and the calibration humility from camp three.</p>
+  </div>
+
+  <!-- 5. FIELD OUTLOOK -->
+  <h2 class="section">Field Outlook — Indian Smallholder Deployment</h2>
+  <div class="outlook">
+    <ul>
+      <li><strong>Calibration is the product, not the electrode.</strong> The recurring lesson — from Nebraska LOI to tropical Walkley-Black factors — is that universal coefficients fail; budget for region- and soil-type-specific calibration campaigns across Indian agro-climatic zones from day one.</li>
+      <li><strong>Interference mitigation will decide field accuracy.</strong> Heterogeneous texture, carbonates, and moisture in Indian soils argue for hardware-side selectivity (ionic-liquid or polydopamine-graphene coatings) rather than relying on the model to clean up a raw signal.</li>
+      <li><strong>Screen-printing is the path to an affordable BOM.</strong> Printed electrodes offer disposability and unit-cost reduction compatible with smallholder economics — but require ruggedization testing against direct soil burial, humidity, and repeated insertion.</li>
+      <li><strong>Use Walkley-Black as cheap, scalable ground truth — with the tropical correction baked in.</strong> India's soil-testing labs already run WB titration; leveraging it (at ~1.2, not 1.3) lets you generate thousands of calibration labels affordably instead of depending on scarce combustion analyzers.</li>
+    </ul>
+  </div>
+
+  <!-- 6. QUICK REFERENCE TABLE -->
+  <h2 class="section">Quick Reference Table</h2>
+  <table>
+    <thead>
+      <tr><th class="sc">Score</th><th>Title</th><th>Method</th><th>Key Finding</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="sc sc5">5</td><td>In-Situ SOC via Smart-Electrochemical Sensing</td><td>Electrochemical (SWV)</td><td>3-electrode + ionic-liquid/biochar film reads SOC with soil as electrolyte</td><td>2024</td></tr>
+      <tr><td class="sc sc5">5</td><td>New EC Detection of Organic Matter in Ecological Soils</td><td>Electrochemical (SSEAC)</td><td>Polydopamine-graphene coating adsorbs organics for cheap, fast readout</td><td>2021</td></tr>
+      <tr><td class="sc sc4">4</td><td>Underground Ink: Printed Electronics in Soil</td><td>Electrochemical (printed)</td><td>Screen-printing enables low-cost, disposable in-soil electrodes</td><td>2024</td></tr>
+      <tr><td class="sc sc4">4</td><td>Predicting SOC from Loss-on-Ignition (4 Regions)</td><td>Classical (LOI)</td><td>Local equations beat universal ones; calibration is geography-bound</td><td>2023</td></tr>
+      <tr><td class="sc sc4">4</td><td>Walkley-Black SOC SOP (FAO GLOSOLAN)</td><td>Classical (wet oxidation)</td><td>Cheapest scalable ground truth; tropical recovery ~1.2 not 1.3</td><td>2020</td></tr>
+      <tr><td class="sc sc3">3</td><td>NIR + Raman Fusion via Outer-Product Analysis</td><td>Spectroscopic</td><td>Orthogonal-signal fusion sharpens SOM estimates</td><td>2024</td></tr>
+      <tr><td class="sc sc3">3</td><td>Vis-NIR SOC with Feature Band Selection (Xinjiang)</td><td>Spectroscopic</td><td>Band selection improves SOC accuracy in arid low-C soils</td><td>2022</td></tr>
+      <tr><td class="sc sc3">3</td><td>Current &amp; Emerging Protocols for Soil C</td><td>Classical (review)</td><td>Dry combustion as the reference bar for cheaper methods</td><td>2022</td></tr>
+      <tr><td class="sc sc2">2</td><td>Calibrated Uncertainty Estimation from Raman</td><td>Spectroscopic</td><td>Calibrated confidence bounds for SOC from SERDS spectra</td><td>2025</td></tr>
+    </tbody>
+  </table>
+
+  <button class="pdfbtn" onclick="window.print()">Save as PDF</button>
+
+  <footer>
+    SOC Daily Research Brief · Generated June 11, 2026 · 9 papers · Founder lens: low-cost electrochemical SOC sensing for Indian smallholder farms
+  </footer>
+
+</div>
+</body>
+</html>
