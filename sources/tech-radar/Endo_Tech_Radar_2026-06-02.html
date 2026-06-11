@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Endo Tech Radar &mdash; 2026-06-02</title><style>
+:root{--bg:#f8f9fa;--card:#fff;--accent:#1d3557;--secondary:#457b9d;--highlight:#2a9d8f;--text:#1b1b1b;}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:0 16px 64px;}
+.wrap{max-width:900px;margin:0 auto;}
+header{padding:32px 0 8px;}
+h1{color:var(--accent);margin:0 0 4px;font-size:1.9rem;}
+.sub{color:var(--secondary);font-weight:500;}
+h2{color:var(--accent);border-bottom:2px solid var(--secondary);padding-bottom:6px;margin-top:40px;}
+h3{color:var(--secondary);margin:28px 0 12px;font-size:1.15rem;}
+.note{background:var(--card);border-left:5px solid var(--highlight);padding:16px 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin:16px 0;}
+.card{background:var(--card);border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.09);padding:16px 20px;margin:14px 0;}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;}
+.card a{color:var(--accent);text-decoration:none;font-weight:700;font-size:1.1rem;}
+.card a:hover{text-decoration:underline;}
+.meta{color:var(--secondary);font-size:.85rem;}
+.tag{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:10px;color:#fff;text-transform:uppercase;letter-spacing:.5px;}
+.tag.new{background:var(--highlight);}
+.tag.update{background:var(--secondary);}
+.badges{margin:10px 0 6px;}
+.badge{display:inline-block;color:#fff;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:6px;margin-right:6px;}
+.just{font-style:italic;color:#555;font-size:.9rem;margin-top:6px;}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.09);margin:16px 0;}
+th{background:var(--accent);color:#fff;text-align:left;padding:10px 12px;font-size:.85rem;}
+td{padding:9px 12px;border-top:1px solid #eee;font-size:.88rem;}
+tr:hover td{background:#f1f5f8;}
+td a{color:var(--secondary);text-decoration:none;}
+.comb{font-weight:700;color:var(--accent);}
+.pdfbtn{position:sticky;top:12px;float:right;background:var(--highlight);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+.pdfbtn:hover{background:#21867a;}
+footer{color:var(--secondary);font-size:.8rem;margin-top:40px;text-align:center;}
+@media print{.pdfbtn{display:none;}body{padding:0;}.card,table,.note{box-shadow:none;border:1px solid #ddd;}}
+</style></head>
+<body><button class="pdfbtn" onclick="window.print()">Save as PDF</button><div class="wrap">
+<header><h1>Endo Tech Radar</h1><div class="sub">Run report &middot; June 02, 2026</div></header>
+
+<div class="note"><strong>Editor's Note.</strong> The standout this run is <strong>Arduino-ESP32 3.3.8</strong> (Combined 14/15) &mdash; Drop-in Arduino layer over ESP-IDF; great for rapid prototyping. Released 2026-04-12, it lands squarely in Endo's sensor-data path. This run surfaces 16 tools (8 new, 8 refreshed) across the embedded-to-backend stack, bringing the cumulative database to 29 tracked tools.</div>
+
+<h2>New &amp; Notable</h2>
+<h3>Agentic Dev Tooling</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/agno-agi/agno" target="_blank">Agno</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v2.6.11 &middot; 2026-06-02 &middot; Python &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 12/15</span></div>
+      <div>Lightweight, high-performance Python framework for building multi-agent systems with memory, knowledge, and tools, focused on composability and minimal abstractions.</div>
+      <div class="just">&ldquo;Minimal, fast framework to stand up internal agents for a small team.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">OpenHands</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v1.7.0 &middot; 2026-05-01 &middot; Python &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#e9c46a">Ease 3</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 11/15</span></div>
+      <div>Open-source platform for autonomous software-engineering agents that write code, run tests, browse repos, and operate a real dev environment.</div>
+      <div class="just">&ldquo;Self-hostable coding agent for offloading routine embedded/backend chores.&rdquo;</div>
+    </div><h3>Edge AI / TinyML</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/hailo-ai/hailort" target="_blank">HailoRT</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v5.3.0 &middot; 2026-05-01 &middot; C++ &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#e9c46a">Ease 3</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 11/15</span></div>
+      <div>Hailo&#x27;s runtime library and tooling for the Hailo-8/8L/10H NPUs, with Python bindings, a REST API mode, and GStreamer plugins. Powers the Raspberry Pi AI HAT+ family.</div>
+      <div class="just">&ldquo;Runtime for Hailo NPUs on Pi 5 edge boxes; compiler stays proprietary.&rdquo;</div>
+    </div><h3>Edge Fleet Management</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/shellhub-io/shellhub" target="_blank">ShellHub</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v0.24.2 &middot; 2026-04-29 &middot; Go &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 13/15</span></div>
+      <div>Centralized SSH and remote access for edge and cloud Linux devices. 2026 brings a from-scratch React/TS UI and a PostgreSQL Community-Edition store (0.25.0-rc in progress).</div>
+      <div class="just">&ldquo;Single pane of glass SSH/fleet access for edge Raspberry Pi devices.&rdquo;</div>
+    </div><h3>Electrochemical Sensing</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/derb12/pybaselines" target="_blank">pybaselines</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v1.2.1 &middot; 2025-08-10 &middot; Python &middot; BSD-3-Clause</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 12/15</span></div>
+      <div>Python library of algorithms for baseline correction of 1-D and 2-D data (polynomial, Whittaker, morphological, spline, classification). Directly useful for de-trending SWV/voltammetry signals.</div>
+      <div class="just">&ldquo;Comprehensive baseline-correction toolkit for voltammetric peaks.&rdquo;</div>
+    </div><h3>Embedded Firmware</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/espressif/arduino-esp32" target="_blank">Arduino-ESP32</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v3.3.8 &middot; 2026-04-12 &middot; C++ &middot; LGPL-2.1</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 5</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 14/15</span></div>
+      <div>Arduino core for the ESP32 family of SoCs. Stable 3.3.8 tracks ESP-IDF 5.x; a 4.0.0-alpha1 building on ESP-IDF 6 landed 2026-05-27.</div>
+      <div class="just">&ldquo;Drop-in Arduino layer over ESP-IDF; great for rapid prototyping.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/espressif/esp-idf" target="_blank">ESP-IDF</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v6.0.1 &middot; 2026-04-27 &middot; C &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#e9c46a">Ease 3</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 13/15</span></div>
+      <div>Espressif&#x27;s official IoT development framework for the ESP32 family; v6.0 is a major release with a new toolchain, refreshed component manager, and ESP-IDF 6 peripheral APIs.</div>
+      <div class="just">&ldquo;Core ESP32 SDK; v6 is a major step but the essential firmware base.&rdquo;</div>
+    </div><h3>LoRa / LoRaWAN</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/jgromes/RadioLib" target="_blank">RadioLib</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v7.7.1 &middot; 2026-05-31 &middot; C++ &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 14/15</span></div>
+      <div>Universal wireless comms library for embedded devices with first-class SX126x/LLCC68 LoRa and a full LoRaWAN 1.1 stack. 7.7.1 fixes an OOB read/leak in LoRaWAN downlink parsing.</div>
+      <div class="just">&ldquo;Best-in-class LoRa radio lib; directly drives Endo&#x27;s transceivers.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/chirpstack/chirpstack" target="_blank">ChirpStack</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v4.18.0 &middot; 2026-05-11 &middot; Rust &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#e9c46a">Ease 3</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 13/15</span></div>
+      <div>Open-source LoRaWAN Network Server. v4.18.0 hardens the admin password hashing (1000 iterations) and continues FUOTA and multi-region work.</div>
+      <div class="just">&ldquo;De-facto open LoRaWAN network server for private deployments.&rdquo;</div>
+    </div><h3>MQTT</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/emqx/emqx" target="_blank">EMQX</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v6.2.0 &middot; 2026-04-08 &middot; Erlang &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#e9c46a">Ease 3</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 12/15</span></div>
+      <div>Highly scalable distributed MQTT broker. v6.2 adds native A2A agent discovery over MQTT, subscription-level filtering, dynamic keepalive, and new time-series integrations.</div>
+      <div class="just">&ldquo;Scalable MQTT broker; upgrade path once Mosquitto is outgrown.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/nanomq/nanomq" target="_blank">NanoMQ</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v0.24.14 &middot; 2026-05-29 &middot; C &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 12/15</span></div>
+      <div>Ultra-lightweight, blazing-fast MQTT broker/bus for IoT edge. 0.24.14 adds an offline message cache, NNG pub/sub bridging, richer REST querying, and resolves several high-severity CVEs.</div>
+      <div class="just">&ldquo;Ultra-light edge MQTT broker for Pi gateways; patch promptly for CVEs.&rdquo;</div>
+    </div><h3>RS-485 / Modbus</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/pymodbus-dev/pymodbus" target="_blank">pymodbus</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v3.13.0 &middot; 2026-04-12 &middot; Python &middot; BSD-3-Clause</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 14/15</span></div>
+      <div>Full Modbus protocol implementation in Python with client, server, and simulator, sync and async APIs, over serial (RS-485) and TCP. 3.13.0 continues the 3.x line for Python &gt;=3.10.</div>
+      <div class="just">&ldquo;The standard Python Modbus stack; sync+async over serial and TCP.&rdquo;</div>
+    </div><h3>React Native</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/dotintent/react-native-ble-plx" target="_blank">react-native-ble-plx</a>
+        <span class="tag new">NEW</span>
+      </div>
+      <div class="meta">v3.5.1 &middot; 2026-02-18 &middot; TypeScript &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 14/15</span></div>
+      <div>The de-facto React Native BLE library. 3.5.x makes BleManager a reusable singleton and converts core calls to promises for proper error reporting; documented for Android 14.</div>
+      <div class="just">&ldquo;Standard RN BLE library; core for in-app device provisioning.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/FormidableLabs/victory-native-xl" target="_blank">Victory Native (XL)</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v41.22.0 &middot; 2026-06-01 &middot; TypeScript &middot; MIT</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 13/15</span></div>
+      <div>From-scratch React Native charting library using Skia for GPU-accelerated rendering, Reanimated for UI-thread animation, and Gesture Handler for native touch.</div>
+      <div class="just">&ldquo;GPU-accelerated, gesture-rich charts for the mobile dashboard.&rdquo;</div>
+    </div><h3>Time-Series / IoT Database</h3>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/timescale/timescaledb" target="_blank">TimescaleDB</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v2.27.2 &middot; 2026-06-02 &middot; C &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 5</span><span class="badge" style="background:#2a9d8f">Quality 5</span><span class="badge" style="background:#2a9d8f">Relevance 5</span><span class="badge" style="background:#1d3557">Combined 15/15</span></div>
+      <div>PostgreSQL extension for high-performance time-series. v2.27 brings unlogged hypertables, trigger-free continuous aggregates, and vectorized aggregation for ~3.5x faster columnstore queries.</div>
+      <div class="just">&ldquo;Postgres-native time-series; drop-in for existing SQL workflows.&rdquo;</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <a href="https://github.com/questdb/questdb" target="_blank">QuestDB</a>
+        <span class="tag update">UPDATE</span>
+      </div>
+      <div class="meta">v9.3.5 &middot; 2026-04-13 &middot; Java &middot; Apache-2.0</div>
+      <div class="badges"><span class="badge" style="background:#2a9d8f">Ease 4</span><span class="badge" style="background:#2a9d8f">Quality 4</span><span class="badge" style="background:#2a9d8f">Relevance 4</span><span class="badge" style="background:#1d3557">Combined 12/15</span></div>
+      <div>Low-latency open-source time-series database on open formats. 9.x adds window joins, PIVOT, TICK interval DSL, AI-assisted console, and fast Parquet queries.</div>
+      <div class="just">&ldquo;Blazing ingest and analytics; strong purpose-built TSDB contender.&rdquo;</div>
+    </div>
+
+<h2>This Run &mdash; Quick Table</h2>
+<table><thead><tr><th>Tool</th><th>Category</th><th>Ease</th><th>Quality</th><th>Relevance</th><th>Combined</th><th>Link</th></tr></thead>
+<tbody><tr><td>TimescaleDB</td><td>Time-Series / IoT Database</td><td>5</td><td>5</td><td>5</td><td class="comb">15</td><td><a href="https://github.com/timescale/timescaledb" target="_blank">link</a></td></tr><tr><td>Arduino-ESP32</td><td>Embedded Firmware</td><td>5</td><td>5</td><td>4</td><td class="comb">14</td><td><a href="https://github.com/espressif/arduino-esp32" target="_blank">link</a></td></tr><tr><td>RadioLib</td><td>LoRa / LoRaWAN</td><td>4</td><td>5</td><td>5</td><td class="comb">14</td><td><a href="https://github.com/jgromes/RadioLib" target="_blank">link</a></td></tr><tr><td>react-native-ble-plx</td><td>React Native</td><td>4</td><td>5</td><td>5</td><td class="comb">14</td><td><a href="https://github.com/dotintent/react-native-ble-plx" target="_blank">link</a></td></tr><tr><td>pymodbus</td><td>RS-485 / Modbus</td><td>4</td><td>5</td><td>5</td><td class="comb">14</td><td><a href="https://github.com/pymodbus-dev/pymodbus" target="_blank">link</a></td></tr><tr><td>ESP-IDF</td><td>Embedded Firmware</td><td>3</td><td>5</td><td>5</td><td class="comb">13</td><td><a href="https://github.com/espressif/esp-idf" target="_blank">link</a></td></tr><tr><td>ChirpStack</td><td>LoRa / LoRaWAN</td><td>3</td><td>5</td><td>5</td><td class="comb">13</td><td><a href="https://github.com/chirpstack/chirpstack" target="_blank">link</a></td></tr><tr><td>Victory Native (XL)</td><td>React Native</td><td>4</td><td>4</td><td>5</td><td class="comb">13</td><td><a href="https://github.com/FormidableLabs/victory-native-xl" target="_blank">link</a></td></tr><tr><td>ShellHub</td><td>Edge Fleet Management</td><td>4</td><td>4</td><td>5</td><td class="comb">13</td><td><a href="https://github.com/shellhub-io/shellhub" target="_blank">link</a></td></tr><tr><td>EMQX</td><td>MQTT</td><td>3</td><td>5</td><td>4</td><td class="comb">12</td><td><a href="https://github.com/emqx/emqx" target="_blank">link</a></td></tr><tr><td>NanoMQ</td><td>MQTT</td><td>4</td><td>4</td><td>4</td><td class="comb">12</td><td><a href="https://github.com/nanomq/nanomq" target="_blank">link</a></td></tr><tr><td>QuestDB</td><td>Time-Series / IoT Database</td><td>4</td><td>4</td><td>4</td><td class="comb">12</td><td><a href="https://github.com/questdb/questdb" target="_blank">link</a></td></tr><tr><td>pybaselines</td><td>Electrochemical Sensing</td><td>4</td><td>4</td><td>4</td><td class="comb">12</td><td><a href="https://github.com/derb12/pybaselines" target="_blank">link</a></td></tr><tr><td>Agno</td><td>Agentic Dev Tooling</td><td>4</td><td>4</td><td>4</td><td class="comb">12</td><td><a href="https://github.com/agno-agi/agno" target="_blank">link</a></td></tr><tr><td>HailoRT</td><td>Edge AI / TinyML</td><td>3</td><td>4</td><td>4</td><td class="comb">11</td><td><a href="https://github.com/hailo-ai/hailort" target="_blank">link</a></td></tr><tr><td>OpenHands</td><td>Agentic Dev Tooling</td><td>3</td><td>4</td><td>4</td><td class="comb">11</td><td><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">link</a></td></tr></tbody></table>
+
+<h2>All-Time Leaderboard (Top 12)</h2>
+<table><thead><tr><th>Tool</th><th>Category</th><th>Combined</th><th>First Seen</th></tr></thead>
+<tbody><tr><td>TimescaleDB</td><td>Time-Series / IoT Database</td><td class="comb">15</td><td>2026-06-02</td></tr><tr><td>libmodbus</td><td>RS-485 / Modbus</td><td class="comb">15</td><td>2026-06-03</td></tr><tr><td>Arduino-ESP32</td><td>Embedded Firmware</td><td class="comb">14</td><td>2026-06-02</td></tr><tr><td>Mender</td><td>RPi / edge fleet management</td><td class="comb">14</td><td>2026-06-03</td></tr><tr><td>RadioLib</td><td>LoRa / LoRaWAN</td><td class="comb">14</td><td>2026-06-02</td></tr><tr><td>mochi-mqtt (server)</td><td>Go backend</td><td class="comb">14</td><td>2026-06-03</td></tr><tr><td>pymodbus</td><td>RS-485 / Modbus</td><td class="comb">14</td><td>2026-06-02</td></tr><tr><td>react-native-ble-plx</td><td>React Native</td><td class="comb">14</td><td>2026-06-02</td></tr><tr><td>Aider</td><td>Agentic dev tooling</td><td class="comb">13</td><td>2026-06-03</td></tr><tr><td>ChirpStack</td><td>LoRa / LoRaWAN</td><td class="comb">13</td><td>2026-06-02</td></tr><tr><td>ESP-IDF</td><td>Embedded Firmware</td><td class="comb">13</td><td>2026-06-02</td></tr><tr><td>Edge Impulse (EON Compiler)</td><td>Edge AI / TinyML</td><td class="comb">13</td><td>2026-06-03</td></tr></tbody></table>
+
+<footer>Endo Automation &middot; Tech Radar pipeline &middot; 29 tools tracked &middot; generated 2026-06-02</footer>
+</div></body></html>
